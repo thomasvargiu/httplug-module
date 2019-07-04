@@ -27,7 +27,7 @@ matrix:
         - DEPS=latest
     - php: 7.3
       env:
-      - DEPS=lowest
+        - DEPS=lowest
     - php: 7.3
       env:
         - DEPS=locked
@@ -35,7 +35,7 @@ matrix:
         - EXECUTE_TEST_SCRUTINIZER=true
     - php: 7.3
       env:
-      - DEPS=latest
+        - DEPS=latest
     - php: 7.4snapshot
       env:
         - DEPS=lowest
