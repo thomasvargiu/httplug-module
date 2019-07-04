@@ -29,13 +29,13 @@ class RequestMatcherFactoryTest extends TestCase
         $successPlugin = $this->prophesize(Plugin::class);
         $failurePlugin = $this->prophesize(Plugin::class);
 
+        $container->get(PluginFactoryManager::class)->willReturn($pluginFactoryManager->reveal());
         $container->get('foo-matcher')->willReturn($requestMatcher->reveal());
         $container->get('foo-success')->willReturn($successPlugin->reveal());
         $container->get('foo-failure')->willReturn($failurePlugin->reveal());
 
         $factory = new RequestMatcherFactory(
-            $container->reveal(),
-            $pluginFactoryManager->reveal()
+            $container->reveal()
         );
 
         $plugin = $factory->createPlugin($config);
@@ -53,11 +53,11 @@ class RequestMatcherFactoryTest extends TestCase
         $pluginFactoryManager = $this->prophesize(PluginFactoryManager::class);
         $requestMatcher = $this->prophesize(RequestMatcher::class);
 
+        $container->get(PluginFactoryManager::class)->willReturn($pluginFactoryManager->reveal());
         $container->get('foo-matcher')->willReturn($requestMatcher->reveal());
 
         $factory = new RequestMatcherFactory(
-            $container->reveal(),
-            $pluginFactoryManager->reveal()
+            $container->reveal()
         );
 
         $plugin = $factory->createPlugin($config);
@@ -89,6 +89,7 @@ class RequestMatcherFactoryTest extends TestCase
         $successPlugin = $this->prophesize(Plugin::class);
         $failurePlugin = $this->prophesize(Plugin::class);
 
+        $container->get(PluginFactoryManager::class)->willReturn($pluginFactoryManager->reveal());
         $container->get('foo-matcher')->willReturn($requestMatcher->reveal());
 
         $pluginFactorySuccess = $this->prophesize(PluginFactory::class);
@@ -101,8 +102,7 @@ class RequestMatcherFactoryTest extends TestCase
         $pluginFactoryManager->getFactory('foo-failure')->willReturn($pluginFactoryFailure->reveal());
 
         $factory = new RequestMatcherFactory(
-            $container->reveal(),
-            $pluginFactoryManager->reveal()
+            $container->reveal()
         );
 
         $plugin = $factory->createPlugin($config);

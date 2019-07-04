@@ -17,19 +17,9 @@ class RequestMatcherFactory implements PluginFactory
     /** @var ContainerInterface */
     private $container;
 
-    /** @var PluginFactoryManager */
-    private $pluginFactoryManager;
-
-    /**
-     * RequestMatcherFactory constructor.
-     *
-     * @param ContainerInterface $container
-     * @param PluginFactoryManager $pluginFactoryManager
-     */
-    public function __construct(ContainerInterface $container, PluginFactoryManager $pluginFactoryManager)
+    public function __construct(ContainerInterface $container)
     {
         $this->container = $container;
-        $this->pluginFactoryManager = $pluginFactoryManager;
     }
 
     public function createPlugin(array $config = []): Plugin
@@ -72,6 +62,9 @@ class RequestMatcherFactory implements PluginFactory
             throw new InvalidArgumentException('Invalid plugin name');
         }
 
-        return $this->pluginFactoryManager->getFactory($name)->createPlugin($plugin['config'] ?? []);
+        /** @var PluginFactoryManager $pluginFactoryManager */
+        $pluginFactoryManager = $this->container->get(PluginFactoryManager::class);
+
+        return $pluginFactoryManager->getFactory($name)->createPlugin($plugin['config'] ?? []);
     }
 }

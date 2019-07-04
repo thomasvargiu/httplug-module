@@ -6,12 +6,11 @@ namespace TMV\HTTPlugModule\DIFactory\PluginFactory;
 
 use Psr\Container\ContainerInterface;
 use TMV\HTTPlugModule\PluginFactory\RequestMatcherFactory;
-use TMV\HTTPlugModule\PluginFactoryManager;
 
 class RequestMatcherFactoryFactory
 {
     public function __invoke(ContainerInterface $container): RequestMatcherFactory
     {
-        return new RequestMatcherFactory($container, $container->get(PluginFactoryManager::class));
+        return new RequestMatcherFactory($container);
     }
 }
