@@ -1,6 +1,15 @@
 # HTTPlug Module
 
-HTTPlug Module for zend-framework and zend-expressive
+[![Latest Stable Version](https://poser.pugx.org/thomasvargiu/httplug-module/v/stable)](https://packagist.org/packages/thomasvargiu/httplug-module)
+[![Total Downloads](https://poser.pugx.org/thomasvargiu/httplug-module/downloads)](https://packagist.org/packages/thomasvargiu/httplug-module)
+[![License](https://poser.pugx.org/thomasvargiu/httplug-module/license)](https://packagist.org/packages/thomasvargiu/httplug-module)
+[![Code Coverage](https://scrutinizer-ci.com/g/thomasvargiu/httplug-module/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/thomasvargiu/httplug-module/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/thomasvargiu/httplug-module/badges/build.png?b=master)](https://scrutinizer-ci.com/g/thomasvargiu/httplug-module/build-status/master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/thomasvargiu/httplug-module/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/thomasvargiu/httplug-module/?branch=master)
+
+HTTPlug Module for zend-framework and zend-expressive.
+
+Visit [http://httplug.io/](http://httplug.io/) for more info.
 
 ## Installation
 
