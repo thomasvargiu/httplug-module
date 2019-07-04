@@ -81,6 +81,13 @@ class ConfigProvider
             ],
             'aliases' => [
                 'httplug.client' => 'httplug.client.default',
+                'httplug.client_factory.buz' => BuzzFactory::class,
+                'httplug.client_factory.curl' => CurlFactory::class,
+                'httplug.client_factory.guzzle5' => Guzzle5Factory::class,
+                'httplug.client_factory.guzzle6' => Guzzle6Factory::class,
+                'httplug.client_factory.mock' => MockFactory::class,
+                'httplug.client_factory.react' => ReactFactory::class,
+                'httplug.client_factory.socket' => SocketFactory::class,
             ],
             'factories' => [
                 'httplug.message_factory' => [MessageFactoryDiscovery::class, 'find'],

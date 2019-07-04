@@ -87,7 +87,7 @@ return [
 
         'clients' => [
             'default' => [
-                'factory' => 'httplug.factory.guzzle6',
+                'factory' => 'httplug.client_factory.guzzle6',
                 'service' => 'my_service',       // Can not be used with "factory" or "config"
                 'config' => [
                     // Options to the Guzzle 6 constructor
