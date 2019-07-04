@@ -8,9 +8,9 @@ use Http\Client\Common\Plugin;
 use Http\Client\Common\PluginClient;
 use Http\Client\HttpClient;
 use Interop\Container\ContainerInterface;
+use PHPUnit\Framework\TestCase;
 use TMV\HTTPlugModule\ClientFactory\ClientFactory;
 use TMV\HTTPlugModule\DIFactory\ClientAbstractFactory;
-use PHPUnit\Framework\TestCase;
 use TMV\HTTPlugModule\PluginFactory\PluginFactory;
 use TMV\HTTPlugModule\PluginFactoryManager;
 

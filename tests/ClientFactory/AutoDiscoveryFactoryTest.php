@@ -5,12 +5,11 @@ declare(strict_types=1);
 namespace TMV\HTTPlugModuleTest\ClientFactory;
 
 use Http\Client\HttpClient;
-use TMV\HTTPlugModule\ClientFactory\AutoDiscoveryFactory;
 use PHPUnit\Framework\TestCase;
+use TMV\HTTPlugModule\ClientFactory\AutoDiscoveryFactory;
 
 class AutoDiscoveryFactoryTest extends TestCase
 {
-
     public function testCreateClient(): void
     {
         $factory = new AutoDiscoveryFactory();

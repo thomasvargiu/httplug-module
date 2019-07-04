@@ -6,12 +6,11 @@ namespace TMV\HTTPlugModuleTest\ClientFactory;
 
 use Http\Client\HttpClient;
 use Http\Mock\Client;
-use TMV\HTTPlugModule\ClientFactory\MockFactory;
 use PHPUnit\Framework\TestCase;
+use TMV\HTTPlugModule\ClientFactory\MockFactory;
 
 class MockFactoryTest extends TestCase
 {
-
     public function testCreateClient(): void
     {
         $factory = new MockFactory();

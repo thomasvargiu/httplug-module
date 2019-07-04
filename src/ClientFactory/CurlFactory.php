@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace TMV\HTTPlugModule\ClientFactory;
 
-use Http\Client\HttpClient;
+use function class_exists;
+use function constant;
 use Http\Client\Curl\Client;
+use Http\Client\HttpClient;
+use function is_string;
 use LogicException;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
-use function class_exists;
-use function constant;
-use function is_string;
 use function sprintf;
 
 class CurlFactory implements ClientFactory
@@ -19,8 +19,9 @@ class CurlFactory implements ClientFactory
     /** @var ResponseFactoryInterface */
     private $responseFactory;
 
-    /** @var StreamFactoryInterface  */
+    /** @var StreamFactoryInterface */
     private $streamFactory;
+
     /**
      * @param ResponseFactoryInterface $responseFactory
      * @param StreamFactoryInterface   $streamFactory

@@ -6,13 +6,12 @@ namespace TMV\HTTPlugModuleTest\PluginFactory;
 
 use Http\Client\Common\Plugin\AuthenticationPlugin;
 use Http\Message\Authentication;
-use TMV\HTTPlugModule\PluginFactory\AuthenticationFactory;
-use TMV\HTTPlugModule\PluginFactory\Authentication\AuthenticationFactory as AuthFactory;
 use PHPUnit\Framework\TestCase;
+use TMV\HTTPlugModule\PluginFactory\Authentication\AuthenticationFactory as AuthFactory;
+use TMV\HTTPlugModule\PluginFactory\AuthenticationFactory;
 
 class AuthenticationFactoryTest extends TestCase
 {
-
     public function testCreatePlugin(): void
     {
         $config = [

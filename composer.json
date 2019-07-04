@@ -11,6 +11,9 @@
         }
     ],
     "minimum-stability": "stable",
+    "config": {
+        "sort-packages": true
+    },
     "extra": {
         "zf": {
             "component": "TMV\\HTTPlugModule",
@@ -48,6 +51,7 @@
         "php-http/curl-client": "<2.0"
     },
     "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.15",
         "guzzlehttp/psr7": "^1.0",
         "php-http/cache-plugin": "^1.6",
         "php-http/guzzle6-adapter": "^1.1.1 || ^2.0.1",
@@ -72,5 +76,14 @@
         "psr-4": {
             "TMV\\HTTPlugModuleTest\\": "tests/"
         }
+    },
+    "scripts": {
+        "cs-check": "php-cs-fixer fix --dry-run --diff --allow-risky=yes",
+        "cs-fix": "php-cs-fixer fix --diff --allow-risky=yes",
+        "phpstan": "phpstan analyse --no-progress .",
+        "check": [
+            "@cs-check",
+            "@phpstan"
+        ]
     }
 }

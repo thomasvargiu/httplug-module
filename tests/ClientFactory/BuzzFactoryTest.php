@@ -6,8 +6,8 @@ namespace TMV\HTTPlugModuleTest\ClientFactory;
 
 use Http\Adapter\Buzz\Client;
 use Http\Message\MessageFactory;
-use TMV\HTTPlugModule\ClientFactory\BuzzFactory;
 use PHPUnit\Framework\TestCase;
+use TMV\HTTPlugModule\ClientFactory\BuzzFactory;
 
 class BuzzFactoryTest extends TestCase
 {

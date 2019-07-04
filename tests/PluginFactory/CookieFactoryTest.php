@@ -6,13 +6,12 @@ namespace TMV\HTTPlugModuleTest\PluginFactory;
 
 use Http\Client\Common\Plugin\CookiePlugin;
 use Http\Message\CookieJar;
-use Psr\Container\ContainerInterface;
 use PHPUnit\Framework\TestCase;
+use Psr\Container\ContainerInterface;
 use TMV\HTTPlugModule\PluginFactory\CookieFactory;
 
 class CookieFactoryTest extends TestCase
 {
-
     public function testCreatePlugin(): void
     {
         $config = [

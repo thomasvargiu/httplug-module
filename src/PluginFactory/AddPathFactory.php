@@ -15,6 +15,7 @@ class AddPathFactory implements PluginFactory
 
     /**
      * AddHostFactory constructor.
+     *
      * @param UriFactoryInterface $uriFactory
      */
     public function __construct(UriFactoryInterface $uriFactory)

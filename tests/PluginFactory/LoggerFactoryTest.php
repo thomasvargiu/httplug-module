@@ -6,14 +6,13 @@ namespace TMV\HTTPlugModuleTest\PluginFactory;
 
 use Http\Client\Common\Plugin\LoggerPlugin;
 use Http\Message\Formatter;
+use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 use TMV\HTTPlugModule\PluginFactory\LoggerFactory;
-use PHPUnit\Framework\TestCase;
 
 class LoggerFactoryTest extends TestCase
 {
-
     public function testCreatePlugin(): void
     {
         $config = [
@@ -54,7 +53,6 @@ class LoggerFactoryTest extends TestCase
     public function testCreatePluginWithDefaultLogger(): void
     {
         $config = [
-
         ];
 
         $container = $this->prophesize(ContainerInterface::class);

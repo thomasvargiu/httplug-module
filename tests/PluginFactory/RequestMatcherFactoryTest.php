@@ -7,15 +7,14 @@ namespace TMV\HTTPlugModuleTest\PluginFactory;
 use Http\Client\Common\Plugin;
 use Http\Client\Common\Plugin\RequestMatcherPlugin;
 use Http\Message\RequestMatcher;
+use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 use TMV\HTTPlugModule\PluginFactory\PluginFactory;
 use TMV\HTTPlugModule\PluginFactory\RequestMatcherFactory;
-use PHPUnit\Framework\TestCase;
 use TMV\HTTPlugModule\PluginFactoryManager;
 
 class RequestMatcherFactoryTest extends TestCase
 {
-
     public function testCreatePlugin(): void
     {
         $config = [

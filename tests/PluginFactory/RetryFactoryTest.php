@@ -10,11 +10,9 @@ use TMV\HTTPlugModule\PluginFactory\RetryFactory;
 
 class RetryFactoryTest extends TestCase
 {
-
     public function testCreatePlugin(): void
     {
         $config = [
-
         ];
 
         $factory = new RetryFactory();

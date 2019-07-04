@@ -5,14 +5,13 @@ declare(strict_types=1);
 namespace TMV\HTTPlugModuleTest\PluginFactory;
 
 use Http\Client\Common\Plugin\BaseUriPlugin;
+use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\UriFactoryInterface;
 use Psr\Http\Message\UriInterface;
-use PHPUnit\Framework\TestCase;
 use TMV\HTTPlugModule\PluginFactory\BaseUriFactory;
 
 class BaseUriFactoryTest extends TestCase
 {
-
     public function testCreatePlugin(): void
     {
         $uri = $this->prophesize(UriInterface::class);

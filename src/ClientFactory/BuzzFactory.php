@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace TMV\HTTPlugModule\ClientFactory;
 
-use Http\Client\HttpClient;
 use Buzz\Client\FileGetContents;
-use Http\Adapter\Buzz\Client as Adapter;
-use Http\Message\MessageFactory;
 use function class_exists;
+use Http\Adapter\Buzz\Client as Adapter;
+use Http\Client\HttpClient;
+use Http\Message\MessageFactory;
 
 class BuzzFactory implements ClientFactory
 {

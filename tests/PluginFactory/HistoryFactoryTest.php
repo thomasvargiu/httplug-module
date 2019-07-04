@@ -6,13 +6,12 @@ namespace TMV\HTTPlugModuleTest\PluginFactory;
 
 use Http\Client\Common\Plugin\HistoryPlugin;
 use Http\Client\Common\Plugin\Journal;
+use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 use TMV\HTTPlugModule\PluginFactory\HistoryFactory;
-use PHPUnit\Framework\TestCase;
 
 class HistoryFactoryTest extends TestCase
 {
-
     public function testCreatePlugin(): void
     {
         $config = [

@@ -10,7 +10,6 @@ use TMV\HTTPlugModule\PluginFactory\Authentication\WsseFactory;
 
 class WsseFactoryTest extends TestCase
 {
-
     public function testCreateAuthentication(): void
     {
         $config = [

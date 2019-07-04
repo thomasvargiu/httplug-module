@@ -8,17 +8,16 @@ use Http\Client\Common\PluginClient;
 use Http\Client\HttpClient;
 use Interop\Container\ContainerInterface;
 use InvalidArgumentException;
+use function is_array;
+use function is_string;
 use TMV\HTTPlugModule\ClientFactory\AutoDiscoveryFactory;
 use TMV\HTTPlugModule\ClientFactory\ClientFactory;
 use TMV\HTTPlugModule\PluginFactoryManager;
 use Zend\ServiceManager\Exception\ServiceNotCreatedException;
 use Zend\ServiceManager\Exception\ServiceNotFoundException;
-use function is_array;
-use function is_string;
 
 class ClientAbstractFactory extends AbstractServiceFactory
 {
-
     protected function getServiceTypeName(): string
     {
         return 'clients';
@@ -30,10 +29,12 @@ class ClientAbstractFactory extends AbstractServiceFactory
      * @param ContainerInterface $container
      * @param string $requestedName
      * @param null|array $options
-     * @return HttpClient
-     * @throws ServiceNotFoundException if unable to resolve the service.
+     *
+     * @throws ServiceNotFoundException if unable to resolve the service
      * @throws ServiceNotCreatedException if an exception is raised when
-     *     creating a service.
+     *     creating a service
+     *
+     * @return HttpClient
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null): HttpClient
     {

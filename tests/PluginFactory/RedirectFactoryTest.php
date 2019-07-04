@@ -10,11 +10,9 @@ use TMV\HTTPlugModule\PluginFactory\RedirectFactory;
 
 class RedirectFactoryTest extends TestCase
 {
-
     public function testCreatePlugin(): void
     {
         $config = [
-
         ];
 
         $factory = new RedirectFactory();

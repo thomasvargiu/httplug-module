@@ -4,23 +4,23 @@ declare(strict_types=1);
 
 namespace TMV\HTTPlugModule\DIFactory;
 
+use function explode;
 use Http\Client\Common\FlexibleHttpClient;
 use Interop\Container\ContainerInterface;
 use InvalidArgumentException;
+use function preg_match;
 use Zend\ServiceManager\Exception\ServiceNotCreatedException;
 use Zend\ServiceManager\Exception\ServiceNotFoundException;
 use Zend\ServiceManager\Factory\AbstractFactoryInterface;
-use function explode;
-use function preg_match;
 
 class FlexibleClientAbstractFactory implements AbstractFactoryInterface
 {
-
     /**
      * Can the factory create an instance for the service?
      *
      * @param ContainerInterface $container
      * @param string $requestedName
+     *
      * @return bool
      */
     public function canCreate(ContainerInterface $container, $requestedName): bool
@@ -40,10 +40,12 @@ class FlexibleClientAbstractFactory implements AbstractFactoryInterface
      * @param ContainerInterface $container
      * @param string $requestedName
      * @param null|array $options
-     * @return FlexibleHttpClient
-     * @throws ServiceNotFoundException if unable to resolve the service.
+     *
+     * @throws ServiceNotFoundException if unable to resolve the service
      * @throws ServiceNotCreatedException if an exception is raised when
-     *     creating a service.
+     *     creating a service
+     *
+     * @return FlexibleHttpClient
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null): FlexibleHttpClient
     {

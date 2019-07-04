@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace TMV\HTTPlugModule\DIFactory;
 
-use Interop\Container\ContainerInterface;
-use InvalidArgumentException;
-use Zend\ServiceManager\Factory\AbstractFactoryInterface;
 use function explode;
 use function implode;
+use Interop\Container\ContainerInterface;
+use InvalidArgumentException;
 use function is_array;
 use function strpos;
+use Zend\ServiceManager\Factory\AbstractFactoryInterface;
 
 abstract class AbstractServiceFactory implements AbstractFactoryInterface
 {

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace TMV\HTTPlugModule;
 
+use function array_key_exists;
 use InvalidArgumentException;
 use TMV\HTTPlugModule\PluginFactory\PluginFactory;
-use function array_key_exists;
 
 class PluginFactoryManager
 {

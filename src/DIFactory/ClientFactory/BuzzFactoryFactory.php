@@ -14,4 +14,3 @@ class BuzzFactoryFactory
         return new BuzzFactory($container->get('httplug.message_factory'));
     }
 }
-

@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace TMV\HTTPlugModule\ClientFactory;
 
+use function class_exists;
 use GuzzleHttp\Client;
 use Http\Adapter\Guzzle5\Client as Adapter;
 use Http\Client\HttpClient;
 use Http\Message\MessageFactory;
 use LogicException;
-use function class_exists;
 
 class Guzzle5Factory implements ClientFactory
 {

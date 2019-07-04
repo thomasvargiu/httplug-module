@@ -20,7 +20,6 @@ use TMV\HTTPlugModule\DIFactory\ClientFactory\Guzzle5FactoryFactory;
 use TMV\HTTPlugModule\DIFactory\ClientFactory\ReactFactoryFactory;
 use TMV\HTTPlugModule\DIFactory\ClientFactory\SocketFactoryFactory;
 use TMV\HTTPlugModule\DIFactory\PluginFactoryManagerFactory;
-use TMV\HTTPlugModule\PluginFactory;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
 class ConfigProvider

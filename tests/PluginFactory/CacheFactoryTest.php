@@ -6,21 +6,19 @@ namespace TMV\HTTPlugModuleTest\PluginFactory;
 
 use Http\Client\Common\Plugin\CachePlugin;
 use Http\Message\StreamFactory;
+use PHPUnit\Framework\TestCase;
 use Psr\Cache\CacheItemPoolInterface;
 use Psr\Container\ContainerInterface;
 use TMV\HTTPlugModule\PluginFactory\CacheFactory;
-use PHPUnit\Framework\TestCase;
 
 class CacheFactoryTest extends TestCase
 {
-
     public function testCreatePlugin(): void
     {
         $config = [
             'cache_pool' => 'foo',
             'stream_factory' => 'bar',
             'options' => [
-
             ],
         ];
 
@@ -43,7 +41,6 @@ class CacheFactoryTest extends TestCase
         $config = [
             'cache_pool' => 'foo',
             'options' => [
-
             ],
         ];
 

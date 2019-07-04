@@ -4,13 +4,12 @@ declare(strict_types=1);
 
 namespace TMV\HTTPlugModuleTest;
 
+use PHPUnit\Framework\TestCase;
 use TMV\HTTPlugModule\PluginFactory\PluginFactory;
 use TMV\HTTPlugModule\PluginFactoryManager;
-use PHPUnit\Framework\TestCase;
 
 class PluginFactoryManagerTest extends TestCase
 {
-
     public function testGetFactory(): void
     {
         $factory = $this->prophesize(PluginFactory::class);

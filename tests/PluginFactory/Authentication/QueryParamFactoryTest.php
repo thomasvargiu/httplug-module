@@ -10,12 +10,11 @@ use TMV\HTTPlugModule\PluginFactory\Authentication\QueryParamFactory;
 
 class QueryParamFactoryTest extends TestCase
 {
-
     public function testCreateAuthentication(): void
     {
         $config = [
             'parameters' => [
-                'foo' => 'bar'
+                'foo' => 'bar',
             ],
         ];
 

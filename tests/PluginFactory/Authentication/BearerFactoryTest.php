@@ -10,7 +10,6 @@ use TMV\HTTPlugModule\PluginFactory\Authentication\BearerFactory;
 
 class BearerFactoryTest extends TestCase
 {
-
     public function testCreateAuthentication(): void
     {
         $config = [

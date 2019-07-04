@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace TMV\HTTPlugModuleTest\PluginFactory;
 
 use Http\Client\Common\Plugin\ContentLengthPlugin;
-use TMV\HTTPlugModule\PluginFactory\ContentLengthFactory;
 use PHPUnit\Framework\TestCase;
+use TMV\HTTPlugModule\PluginFactory\ContentLengthFactory;
 
 class ContentLengthFactoryTest extends TestCase
 {

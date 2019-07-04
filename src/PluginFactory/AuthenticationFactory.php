@@ -15,6 +15,7 @@ class AuthenticationFactory implements PluginFactory
 
     /**
      * AuthenticationFactory constructor.
+     *
      * @param array<string, Authentication\AuthenticationFactory> $factories
      */
     public function __construct(array $factories)

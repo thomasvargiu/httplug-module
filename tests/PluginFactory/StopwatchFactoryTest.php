@@ -5,14 +5,13 @@ declare(strict_types=1);
 namespace TMV\HTTPlugModuleTest\PluginFactory;
 
 use Http\Client\Common\Plugin\StopwatchPlugin;
+use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 use Symfony\Component\Stopwatch\Stopwatch;
 use TMV\HTTPlugModule\PluginFactory\StopwatchFactory;
-use PHPUnit\Framework\TestCase;
 
 class StopwatchFactoryTest extends TestCase
 {
-
     public function testCreatePlugin(): void
     {
         $config = [
