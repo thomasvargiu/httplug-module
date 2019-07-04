@@ -11,7 +11,7 @@ use TMV\HTTPlugModule\ClientFactory\SocketFactory;
 
 class SocketFactoryTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

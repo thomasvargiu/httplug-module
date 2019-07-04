@@ -11,7 +11,7 @@ use TMV\HTTPlugModule\ClientFactory\Guzzle5Factory;
 
 class Guzzle5FactoryTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

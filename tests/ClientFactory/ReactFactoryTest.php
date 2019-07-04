@@ -11,7 +11,7 @@ use TMV\HTTPlugModule\ClientFactory\ReactFactory;
 
 class ReactFactoryTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
