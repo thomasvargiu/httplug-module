@@ -1,0 +1,75 @@
+{
+    "name": "thomasvargiu/httplug-module",
+    "version": "0.1.0",
+    "description": "HTTPlug module for zend framework and zend-expressive",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Thomas Vargiu",
+            "email": "tvargiu@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "extra": {
+        "zf": {
+            "component": "TMV\\HTTPlugModule",
+            "config-provider": "TMV\\HTTPlugModule\\ConfigProvider"
+        }
+    },
+    "keywords": [
+        "http",
+        "discovery",
+        "adapter",
+        "message",
+        "factory",
+        "module",
+        "httplug",
+        "php-http",
+        "zend",
+        "expressive"
+    ],
+    "require": {
+        "php": "^7.1",
+        "php-http/client-common": "^1.9 || ^2.0",
+        "php-http/client-implementation": "^1.0",
+        "php-http/discovery": "^1.0",
+        "php-http/httplug": "^1.0 || ^2.0",
+        "php-http/message": "^1.4",
+        "php-http/message-factory": "^1.0.2",
+        "psr/http-client": "^1.0",
+        "psr/http-message": "^1.0",
+        "zendframework/zend-servicemanager": "^3.0",
+        "psr/http-factory": "^1.0"
+    },
+    "conflict": {
+        "php-http/guzzle6-adapter": "<1.1",
+        "php-http/curl-client": "<2.0"
+    },
+    "require-dev": {
+        "guzzlehttp/psr7": "^1.0",
+        "php-http/cache-plugin": "^1.6",
+        "php-http/guzzle6-adapter": "^1.1.1 || ^2.0.1",
+        "php-http/mock-client": "^1.2",
+        "php-http/promise": "^1.0",
+        "phpstan/phpstan": "^0.11.8",
+        "jangregor/phpstan-prophecy": "^0.4.0",
+        "phpstan/extension-installer": "^1.0",
+        "phpstan/phpstan-deprecation-rules": "^0.11.2",
+        "phpunit/phpunit": "^7.5 || ^8.2",
+        "php-http/curl-client": "^2.0",
+        "php-http/logger-plugin": "^1.1",
+        "php-http/stopwatch-plugin": "^1.2",
+        "php-http/vcr-plugin": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "TMV\\HTTPlugModule\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TMV\\HTTPlugModuleTest\\": "tests/"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+parameters:
+    level: max
+    fileExtensions:
+        - php
+    excludes_analyse:
+        - %currentWorkingDirectory%/.phpstorm.meta.php
+        - %currentWorkingDirectory%/vendor/*
+        - %currentWorkingDirectory%/src/ClientFactory\BuzzFactory.php
+        - %currentWorkingDirectory%/src/ClientFactory\Guzzle5Factory.php
+        - %currentWorkingDirectory%/src/ClientFactory\ReactFactory.php
+        - %currentWorkingDirectory%/src/ClientFactory\SocketFactory.php
+        - %currentWorkingDirectory%/tests/ClientFactory\BuzzFactoryTest.php
+        - %currentWorkingDirectory%/tests/ClientFactory\Guzzle5FactoryTest.php
+        - %currentWorkingDirectory%/tests/ClientFactory\ReactFactoryTest.php
+        - %currentWorkingDirectory%/tests/ClientFactory\SocketFactoryTest.php
+
+    ignoreErrors:
+        - '#Fetching class constant class of deprecated class Http\\Discovery\\MessageFactoryDiscovery.*#'
+
+includes:
+    - vendor/jangregor/phpstan-prophecy/src/extension.neon
