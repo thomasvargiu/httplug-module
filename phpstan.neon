@@ -16,8 +16,6 @@ parameters:
 
     ignoreErrors:
         - '#Fetching class constant class of deprecated class Http\\Discovery\\MessageFactoryDiscovery.*#'
-        - '#Fetching class constant class of deprecated class Http\\Discovery\\StreamFactoryDiscovery.*#'
-        - '#Fetching class constant class of deprecated class Http\\Discovery\\UriFactoryDiscovery.*#'
 
 includes:
     - vendor/jangregor/phpstan-prophecy/src/extension.neon
