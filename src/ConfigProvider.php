@@ -95,8 +95,8 @@ class ConfigProvider
                 'httplug.message_factory' => [MessageFactoryDiscovery::class, 'find'],
                 'httplug.response_factory' => [Psr17FactoryDiscovery::class, 'findResponseFactory'],
                 'httplug.request_factory' => [Psr17FactoryDiscovery::class, 'findRequestFactory'],
-                'httplug.uri_factory' => [UriFactoryDiscovery::class, 'findUrlFactory'],
-                'httplug.stream_factory' => [StreamFactoryDiscovery::class, 'find'],
+                'httplug.uri_factory' => [Psr17FactoryDiscovery::class, 'findUrlFactory'],
+                'httplug.stream_factory' => [Psr17FactoryDiscovery::class, 'findStreamFactory'],
                 // Client factories
                 AutoDiscoveryFactory::class => InvokableFactory::class,
                 BuzzFactory::class => BuzzFactoryFactory::class,
