@@ -6,8 +6,6 @@ namespace TMV\HTTPlugModule;
 
 use Http\Discovery\MessageFactoryDiscovery;
 use Http\Discovery\Psr17FactoryDiscovery;
-use Http\Discovery\StreamFactoryDiscovery;
-use Http\Discovery\UriFactoryDiscovery;
 use TMV\HTTPlugModule\ClientFactory\AutoDiscoveryFactory;
 use TMV\HTTPlugModule\ClientFactory\BuzzFactory;
 use TMV\HTTPlugModule\ClientFactory\CurlFactory;
