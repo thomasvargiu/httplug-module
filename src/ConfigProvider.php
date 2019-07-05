@@ -6,6 +6,8 @@ namespace TMV\HTTPlugModule;
 
 use Http\Discovery\MessageFactoryDiscovery;
 use Http\Discovery\Psr17FactoryDiscovery;
+use Http\Discovery\StreamFactoryDiscovery;
+use Http\Discovery\UriFactoryDiscovery;
 use TMV\HTTPlugModule\ClientFactory\AutoDiscoveryFactory;
 use TMV\HTTPlugModule\ClientFactory\BuzzFactory;
 use TMV\HTTPlugModule\ClientFactory\CurlFactory;
@@ -93,8 +95,8 @@ class ConfigProvider
                 'httplug.message_factory' => [MessageFactoryDiscovery::class, 'find'],
                 'httplug.response_factory' => [Psr17FactoryDiscovery::class, 'findResponseFactory'],
                 'httplug.request_factory' => [Psr17FactoryDiscovery::class, 'findRequestFactory'],
-                'httplug.uri_factory' => [Psr17FactoryDiscovery::class, 'findUrlFactory'],
-                'httplug.stream_factory' => [Psr17FactoryDiscovery::class, 'findStreamFactory'],
+                'httplug.uri_factory' => [UriFactoryDiscovery::class, 'findUrlFactory'],
+                'httplug.stream_factory' => [StreamFactoryDiscovery::class, 'find'],
                 // Client factories
                 AutoDiscoveryFactory::class => InvokableFactory::class,
                 BuzzFactory::class => BuzzFactoryFactory::class,
