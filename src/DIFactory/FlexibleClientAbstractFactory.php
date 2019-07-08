@@ -25,7 +25,7 @@ class FlexibleClientAbstractFactory implements AbstractFactoryInterface
      */
     public function canCreate(ContainerInterface $container, $requestedName): bool
     {
-        if (! preg_match('/httplug\.clients\.[^.]+\.flexible/', $requestedName)) {
+        if (! preg_match('/^httplug\.clients\.[^.]+\.flexible$/', $requestedName)) {
             return false;
         }
 
@@ -49,7 +49,7 @@ class FlexibleClientAbstractFactory implements AbstractFactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null): FlexibleHttpClient
     {
-        if (! preg_match('/httplug\.clients\.[^.]+\.flexible/', $requestedName)) {
+        if (! preg_match('/^httplug\.clients\.[^.]+\.flexible$/', $requestedName)) {
             throw new InvalidArgumentException('Invalid service name');
         }
 

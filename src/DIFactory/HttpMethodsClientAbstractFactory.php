@@ -25,7 +25,7 @@ class HttpMethodsClientAbstractFactory implements AbstractFactoryInterface
      */
     public function canCreate(ContainerInterface $container, $requestedName): bool
     {
-        if (! preg_match('/httplug\.clients\.[^.]+\.http_methods/', $requestedName)) {
+        if (! preg_match('/^httplug\.clients\.[^.]+\.http_methods$/', $requestedName)) {
             return false;
         }
 
@@ -49,7 +49,7 @@ class HttpMethodsClientAbstractFactory implements AbstractFactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null): HttpMethodsClient
     {
-        if (! preg_match('/httplug\.clients\.[^.]+\.http_methods/', $requestedName)) {
+        if (! preg_match('/^httplug\.clients\.[^.]+\.http_methods$/', $requestedName)) {
             throw new InvalidArgumentException('Invalid service name');
         }
 

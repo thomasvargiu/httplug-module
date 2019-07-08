@@ -15,12 +15,26 @@ use TMV\HTTPlugModule\ClientFactory\ClientFactory;
 use TMV\HTTPlugModule\PluginFactoryManager;
 use Zend\ServiceManager\Exception\ServiceNotCreatedException;
 use Zend\ServiceManager\Exception\ServiceNotFoundException;
+use Zend\ServiceManager\Factory\AbstractFactoryInterface;
 
-class ClientAbstractFactory extends AbstractServiceFactory
+class ClientAbstractFactory implements AbstractFactoryInterface
 {
     protected function getServiceTypeName(): string
     {
         return 'clients';
+    }
+
+    public function canCreate(ContainerInterface $container, $requestedName): bool
+    {
+        if (! preg_match('/^httplug\.clients\.[^.]+$/', $requestedName)) {
+            throw new InvalidArgumentException('Invalid service name');
+        }
+
+        [,, $clientName] = explode('.', $requestedName);
+
+        $config = $container->get('config')['httplug']['clients'][$clientName] ?? null;
+
+        return is_array($config);
     }
 
     /**
@@ -38,7 +52,17 @@ class ClientAbstractFactory extends AbstractServiceFactory
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null): HttpClient
     {
-        $config = $this->getServiceConfig($container, $requestedName);
+        if (! preg_match('/^httplug\.clients\.[^.]+$/', $requestedName)) {
+            throw new InvalidArgumentException('Invalid service name');
+        }
+
+        [,, $clientName] = explode('.', $requestedName);
+
+        $config = $container->get('config')['httplug']['clients'][$clientName] ?? null;
+
+        if (! is_array($config)) {
+            throw new InvalidArgumentException('Invalid service name');
+        }
 
         if (! empty($config['service'])) {
             $client = $container->get($config['service']);
