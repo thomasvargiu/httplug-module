@@ -6,7 +6,10 @@ namespace TMV\HTTPlugModule\PluginFactory;
 
 use Http\Client\Common\Plugin;
 use Http\Client\Common\Plugin\CachePlugin;
+use Psr\Cache\CacheItemPoolInterface;
 use Psr\Container\ContainerInterface;
+use Psr\Http\Message\StreamFactoryInterface;
+use TMV\HTTPlugModule\Adapter\StreamFactory;
 
 class CacheFactory implements PluginFactory
 {
@@ -30,9 +33,15 @@ class CacheFactory implements PluginFactory
             $options['cache_key_generator'] = $this->container->get($options['cache_key_generator']);
         }
 
+        /** @var CacheItemPoolInterface $cachePool */
+        $cachePool = $this->container->get($config['cache_pool']);
+
+        /** @var StreamFactoryInterface $streamFactory */
+        $streamFactory = $this->container->get($config['stream_factory'] ?? 'httplug.stream_factory');
+
         return new CachePlugin(
-            $this->container->get($config['cache_pool']),
-            $this->container->get($config['stream_factory'] ?? 'httplug.stream_factory'),
+            $cachePool,
+            new StreamFactory($streamFactory),
             $options
         );
     }

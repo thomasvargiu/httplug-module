@@ -6,6 +6,8 @@ namespace TMV\HTTPlugModule\DIFactory;
 
 use function explode;
 use Http\Client\Common\HttpMethodsClient;
+use Http\Client\HttpClient;
+use Http\Message\MessageFactory;
 use Interop\Container\ContainerInterface;
 use InvalidArgumentException;
 use function preg_match;
@@ -55,9 +57,15 @@ class HttpMethodsClientAbstractFactory implements AbstractFactoryInterface
 
         [,, $clientName] = explode('.', $requestedName);
 
+        /** @var HttpClient $httpClient */
+        $httpClient = $container->get('httplug.clients.' . $clientName);
+
+        /** @var MessageFactory $messageFactory */
+        $messageFactory = $container->get('httplug.message_factory');
+
         return new HttpMethodsClient(
-            $container->get('httplug.clients.' . $clientName),
-            $container->get('httplug.request_factory')
+            $httpClient,
+            $messageFactory
         );
     }
 }

@@ -6,6 +6,7 @@ namespace TMV\HTTPlugModule\DIFactory;
 
 use function explode;
 use Http\Client\Common\FlexibleHttpClient;
+use Http\Client\HttpClient;
 use Interop\Container\ContainerInterface;
 use InvalidArgumentException;
 use function preg_match;
@@ -55,6 +56,9 @@ class FlexibleClientAbstractFactory implements AbstractFactoryInterface
 
         [,, $clientName] = explode('.', $requestedName);
 
-        return new FlexibleHttpClient($container->get('httplug.clients.' . $clientName));
+        /** @var HttpClient $httpClient */
+        $httpClient = $container->get('httplug.clients.' . $clientName);
+
+        return new FlexibleHttpClient($httpClient);
     }
 }
