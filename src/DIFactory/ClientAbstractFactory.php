@@ -27,7 +27,7 @@ class ClientAbstractFactory implements AbstractFactoryInterface
     public function canCreate(ContainerInterface $container, $requestedName): bool
     {
         if (! preg_match('/^httplug\.clients\.[^.]+$/', $requestedName)) {
-            throw new InvalidArgumentException('Invalid service name');
+            return false;
         }
 
         [,, $clientName] = explode('.', $requestedName);
