@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace TMV\HTTPlugModuleTest\PluginFactory;
 
 use Http\Client\Common\Plugin\CachePlugin;
-use Http\Message\StreamFactory;
 use PHPUnit\Framework\TestCase;
 use Psr\Cache\CacheItemPoolInterface;
 use Psr\Container\ContainerInterface;
+use Psr\Http\Message\StreamFactoryInterface;
 use TMV\HTTPlugModule\PluginFactory\CacheFactory;
 
 class CacheFactoryTest extends TestCase
@@ -23,7 +23,7 @@ class CacheFactoryTest extends TestCase
         ];
 
         $cacheItemPool = $this->prophesize(CacheItemPoolInterface::class);
-        $streamFactory = $this->prophesize(StreamFactory::class);
+        $streamFactory = $this->prophesize(StreamFactoryInterface::class);
         $container = $this->prophesize(ContainerInterface::class);
 
         $container->get('foo')->willReturn($cacheItemPool->reveal());
@@ -45,7 +45,7 @@ class CacheFactoryTest extends TestCase
         ];
 
         $cacheItemPool = $this->prophesize(CacheItemPoolInterface::class);
-        $streamFactory = $this->prophesize(StreamFactory::class);
+        $streamFactory = $this->prophesize(StreamFactoryInterface::class);
         $container = $this->prophesize(ContainerInterface::class);
 
         $container->get('foo')->willReturn($cacheItemPool->reveal());
