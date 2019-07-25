@@ -1,6 +1,5 @@
 {
     "name": "thomasvargiu/httplug-module",
-    "version": "0.1.0",
     "description": "HTTPlug module for zend framework and zend-expressive",
     "type": "library",
     "license": "MIT",
