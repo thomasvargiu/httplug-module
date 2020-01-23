@@ -8,5 +8,10 @@ use Http\Client\HttpClient;
 
 interface ClientFactory
 {
+    /**
+     * @param array<string, mixed> $config
+     *
+     * @return HttpClient
+     */
     public function createClient(array $config = []): HttpClient;
 }

@@ -22,6 +22,11 @@ class RequestMatcherFactory implements PluginFactory
         $this->container = $container;
     }
 
+    /**
+     * @param array<string, mixed> $config
+     *
+     * @return Plugin
+     */
     public function createPlugin(array $config = []): Plugin
     {
         $requestMatcherName = $config['request_matcher'] ?? null;
@@ -46,6 +51,11 @@ class RequestMatcherFactory implements PluginFactory
         );
     }
 
+    /**
+     * @param string|array<string, mixed> $plugin
+     *
+     * @return Plugin
+     */
     private function getPlugin($plugin): Plugin
     {
         if (is_string($plugin)) {

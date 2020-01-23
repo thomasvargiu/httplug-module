@@ -10,6 +10,11 @@ use LogicException;
 
 class VcrRecordFactory extends AbstractVcrFactory
 {
+    /**
+     * @param array<string, mixed> $config
+     *
+     * @return Plugin
+     */
     public function createPlugin(array $config = []): Plugin
     {
         if (! class_exists(RecordPlugin::class)) {

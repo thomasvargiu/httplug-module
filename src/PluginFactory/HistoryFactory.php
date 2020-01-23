@@ -20,6 +20,11 @@ class HistoryFactory implements PluginFactory
         $this->container = $container;
     }
 
+    /**
+     * @param array<string, mixed> $config
+     *
+     * @return Plugin
+     */
     public function createPlugin(array $config = []): Plugin
     {
         $journalServiceName = $config['journal'] ?? null;

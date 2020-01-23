@@ -23,6 +23,11 @@ class MockFactory implements ClientFactory
         $this->client = $client ?: new Client();
     }
 
+    /**
+     * @param array<string, mixed> $config
+     *
+     * @return HttpClient
+     */
     public function createClient(array $config = []): HttpClient
     {
         return $this->client;

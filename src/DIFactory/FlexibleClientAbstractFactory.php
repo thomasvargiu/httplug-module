@@ -9,10 +9,10 @@ use Http\Client\Common\FlexibleHttpClient;
 use Http\Client\HttpClient;
 use Interop\Container\ContainerInterface;
 use InvalidArgumentException;
+use Laminas\ServiceManager\Exception\ServiceNotCreatedException;
+use Laminas\ServiceManager\Exception\ServiceNotFoundException;
+use Laminas\ServiceManager\Factory\AbstractFactoryInterface;
 use function preg_match;
-use Zend\ServiceManager\Exception\ServiceNotCreatedException;
-use Zend\ServiceManager\Exception\ServiceNotFoundException;
-use Zend\ServiceManager\Factory\AbstractFactoryInterface;
 
 class FlexibleClientAbstractFactory implements AbstractFactoryInterface
 {
@@ -40,7 +40,7 @@ class FlexibleClientAbstractFactory implements AbstractFactoryInterface
      *
      * @param ContainerInterface $container
      * @param string $requestedName
-     * @param null|array $options
+     * @param null|array<string, mixed> $options
      *
      * @throws ServiceNotFoundException if unable to resolve the service
      * @throws ServiceNotCreatedException if an exception is raised when

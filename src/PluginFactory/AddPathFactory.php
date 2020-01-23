@@ -23,6 +23,11 @@ class AddPathFactory implements PluginFactory
         $this->uriFactory = $uriFactory;
     }
 
+    /**
+     * @param array<string, mixed> $config
+     *
+     * @return Plugin
+     */
     public function createPlugin(array $config = []): Plugin
     {
         return new AddPathPlugin($this->uriFactory->createUri($config['path'] ?? ''));

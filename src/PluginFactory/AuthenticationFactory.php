@@ -23,6 +23,11 @@ class AuthenticationFactory implements PluginFactory
         $this->factories = $factories;
     }
 
+    /**
+     * @param array<string, mixed> $config
+     *
+     * @return Plugin
+     */
     public function createPlugin(array $config = []): Plugin
     {
         $options = $config['options'] ?? [];

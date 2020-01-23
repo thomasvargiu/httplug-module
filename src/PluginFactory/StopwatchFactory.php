@@ -19,6 +19,11 @@ class StopwatchFactory implements PluginFactory
         $this->container = $container;
     }
 
+    /**
+     * @param array<string, mixed> $config
+     *
+     * @return Plugin
+     */
     public function createPlugin(array $config = []): Plugin
     {
         if (! class_exists(CachePlugin::class)) {

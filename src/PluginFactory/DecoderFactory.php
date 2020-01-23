@@ -9,6 +9,11 @@ use Http\Client\Common\Plugin\DecoderPlugin;
 
 class DecoderFactory implements PluginFactory
 {
+    /**
+     * @param array<string, mixed> $config
+     *
+     * @return Plugin
+     */
     public function createPlugin(array $config = []): Plugin
     {
         return new DecoderPlugin($config);

@@ -6,32 +6,30 @@ namespace TMV\HTTPlugModule\ClientFactory;
 
 use Buzz\Client\FileGetContents;
 use function class_exists;
-use Http\Adapter\Buzz\Client as Adapter;
 use Http\Client\HttpClient;
-use Http\Message\MessageFactory;
+use Psr\Http\Message\ResponseFactoryInterface;
 
 class BuzzFactory implements ClientFactory
 {
-    /** @var MessageFactory */
-    private $messageFactory;
+    /** @var ResponseFactoryInterface */
+    private $responseFactory;
 
-    public function __construct(MessageFactory $messageFactory)
+    public function __construct(ResponseFactoryInterface $responseFactory)
     {
-        $this->messageFactory = $messageFactory;
+        $this->responseFactory = $responseFactory;
     }
 
+    /**
+     * @param array<string, mixed> $config
+     *
+     * @return HttpClient
+     */
     public function createClient(array $config = []): HttpClient
     {
-        if (! class_exists('Http\Adapter\Buzz\Client')) {
-            throw new \LogicException('To use the Buzz adapter you need to install the "php-http/buzz-adapter" package.');
+        if (! class_exists(FileGetContents::class)) {
+            throw new \LogicException('To use the Buzz adapter you need to install the "kriswallsmith/buzz: ^1.0" package.');
         }
 
-        $client = new FileGetContents();
-        $client->setTimeout($config['timeout'] ?? 5);
-        $client->setVerifyPeer($config['verify_peer'] ?? true);
-        $client->setVerifyHost($config['verify_host'] ?? 2);
-        $client->setProxy($config['proxy'] ?? null);
-
-        return new Adapter($client, $this->messageFactory);
+        return new FileGetContents($this->responseFactory, $config);
     }
 }

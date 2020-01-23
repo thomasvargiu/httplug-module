@@ -9,6 +9,11 @@ use Http\Client\Common\Plugin\ContentTypePlugin;
 
 class ContentTypeFactory implements PluginFactory
 {
+    /**
+     * @param array<string, mixed> $config
+     *
+     * @return Plugin
+     */
     public function createPlugin(array $config = []): Plugin
     {
         return new ContentTypePlugin($config);

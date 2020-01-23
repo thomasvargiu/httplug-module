@@ -14,7 +14,7 @@
         "sort-packages": true
     },
     "extra": {
-        "zf": {
+        "laminas": {
             "component": "TMV\\HTTPlugModule",
             "config-provider": "TMV\\HTTPlugModule\\ConfigProvider"
         }
@@ -29,10 +29,12 @@
         "httplug",
         "php-http",
         "zend",
-        "expressive"
+        "expressive",
+        "laminas",
+        "mezzio"
     ],
     "require": {
-        "php": "^7.1",
+        "php": "^7.2",
         "php-http/client-common": "^1.9 || ^2.0",
         "php-http/client-implementation": "^1.0",
         "php-http/discovery": "^1.0",
@@ -41,30 +43,38 @@
         "php-http/message-factory": "^1.0.2",
         "psr/http-client": "^1.0",
         "psr/http-message": "^1.0",
-        "zendframework/zend-servicemanager": "^3.0",
+        "laminas/laminas-servicemanager": "^3.0",
         "psr/http-factory": "^1.0",
-        "psr/container": "^1.0"
+        "psr/container": "^1.0",
+        "laminas/laminas-dependency-plugin": "^1.0"
     },
     "conflict": {
-        "php-http/guzzle6-adapter": "<1.1",
-        "php-http/curl-client": "<2.0"
+        "php-http/guzzle5-adapter": "<2.0",
+        "php-http/guzzle6-adapter": "<2.0",
+        "php-http/curl-client": "<2.0",
+        "php-http/react-adapter": "<2.4",
+        "php-http/socket-client": "<2.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.15",
         "guzzlehttp/psr7": "^1.0",
+        "jangregor/phpstan-prophecy": "^0.6.0",
+        "kriswallsmith/buzz": "^1.0.1",
         "php-http/cache-plugin": "^1.6",
-        "php-http/guzzle6-adapter": "^1.1.1 || ^2.0.1",
-        "php-http/mock-client": "^1.2",
-        "php-http/promise": "^1.0",
-        "phpstan/phpstan": "^0.11.8",
-        "jangregor/phpstan-prophecy": "^0.4.0",
-        "phpstan/extension-installer": "^1.0",
-        "phpstan/phpstan-deprecation-rules": "^0.11.2",
-        "phpunit/phpunit": "^7.5 || ^8.2",
         "php-http/curl-client": "^2.0",
+        "php-http/guzzle6-adapter": "^1.1.1 || ^2.0.1",
         "php-http/logger-plugin": "^1.1",
+        "php-http/mock-client": "^1.3",
+        "php-http/promise": "^1.0",
+        "php-http/react-adapter": "dev-master as 2.4.0",
+        "php-http/socket-client": "dev-master as 2.0.0",
         "php-http/stopwatch-plugin": "^1.2",
-        "php-http/vcr-plugin": "dev-master"
+        "php-http/vcr-plugin": "dev-master",
+        "phpspec/prophecy": "^1.10",
+        "phpstan/extension-installer": "^1.0",
+        "phpstan/phpstan": "^0.12",
+        "phpstan/phpstan-deprecation-rules": "^0.12",
+        "phpunit/phpunit": "^8.5.2"
     },
     "autoload": {
         "psr-4": {
@@ -79,7 +89,7 @@
     "scripts": {
         "cs-check": "php-cs-fixer fix --dry-run --diff --allow-risky=yes",
         "cs-fix": "php-cs-fixer fix --diff --allow-risky=yes",
-        "phpstan": "phpstan analyse --no-progress .",
+        "phpstan": "phpstan analyse --no-progress",
         "check": [
             "@cs-check",
             "@phpstan"

@@ -4,18 +4,19 @@ declare(strict_types=1);
 
 namespace TMV\HTTPlugModule\DIFactory;
 
+use Http\Client\Common\Plugin;
 use Http\Client\Common\PluginClient;
 use Http\Client\HttpClient;
 use Interop\Container\ContainerInterface;
 use InvalidArgumentException;
 use function is_array;
 use function is_string;
+use Laminas\ServiceManager\Exception\ServiceNotCreatedException;
+use Laminas\ServiceManager\Exception\ServiceNotFoundException;
+use Laminas\ServiceManager\Factory\AbstractFactoryInterface;
 use TMV\HTTPlugModule\ClientFactory\AutoDiscoveryFactory;
 use TMV\HTTPlugModule\ClientFactory\ClientFactory;
 use TMV\HTTPlugModule\PluginFactoryManager;
-use Zend\ServiceManager\Exception\ServiceNotCreatedException;
-use Zend\ServiceManager\Exception\ServiceNotFoundException;
-use Zend\ServiceManager\Factory\AbstractFactoryInterface;
 
 class ClientAbstractFactory implements AbstractFactoryInterface
 {
@@ -24,6 +25,12 @@ class ClientAbstractFactory implements AbstractFactoryInterface
         return 'clients';
     }
 
+    /**
+     * @param ContainerInterface $container
+     * @param string $requestedName
+     *
+     * @return bool
+     */
     public function canCreate(ContainerInterface $container, $requestedName): bool
     {
         if (! preg_match('/^httplug\.clients\.[^.]+$/', $requestedName)) {
@@ -42,7 +49,7 @@ class ClientAbstractFactory implements AbstractFactoryInterface
      *
      * @param ContainerInterface $container
      * @param string $requestedName
-     * @param null|array $options
+     * @param null|array<string, mixed> $options
      *
      * @throws ServiceNotFoundException if unable to resolve the service
      * @throws ServiceNotCreatedException if an exception is raised when
@@ -84,6 +91,12 @@ class ClientAbstractFactory implements AbstractFactoryInterface
         );
     }
 
+    /**
+     * @param ContainerInterface $container
+     * @param array<string, mixed> $config
+     *
+     * @return Plugin[]
+     */
     private function retrievePlugins(ContainerInterface $container, array $config): array
     {
         /** @var PluginFactoryManager $pluginFactoryManager */

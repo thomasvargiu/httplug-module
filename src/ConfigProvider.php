@@ -6,6 +6,7 @@ namespace TMV\HTTPlugModule;
 
 use Http\Discovery\MessageFactoryDiscovery;
 use Http\Discovery\Psr17FactoryDiscovery;
+use Laminas\ServiceManager\Factory\InvokableFactory;
 use TMV\HTTPlugModule\ClientFactory\AutoDiscoveryFactory;
 use TMV\HTTPlugModule\ClientFactory\BuzzFactory;
 use TMV\HTTPlugModule\ClientFactory\CurlFactory;
@@ -20,10 +21,12 @@ use TMV\HTTPlugModule\DIFactory\ClientFactory\Guzzle5FactoryFactory;
 use TMV\HTTPlugModule\DIFactory\ClientFactory\ReactFactoryFactory;
 use TMV\HTTPlugModule\DIFactory\ClientFactory\SocketFactoryFactory;
 use TMV\HTTPlugModule\DIFactory\PluginFactoryManagerFactory;
-use Zend\ServiceManager\Factory\InvokableFactory;
 
 class ConfigProvider
 {
+    /**
+     * @return array<string, mixed>
+     */
     public function __invoke(): array
     {
         return [
@@ -71,6 +74,9 @@ class ConfigProvider
         ];
     }
 
+    /**
+     * @return array<string, array<mixed, mixed>>
+     */
     public function getDependencies(): array
     {
         return [

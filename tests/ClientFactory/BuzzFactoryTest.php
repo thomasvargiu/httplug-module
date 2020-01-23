@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace TMV\HTTPlugModuleTest\ClientFactory;
 
-use Http\Adapter\Buzz\Client;
-use Http\Message\MessageFactory;
+use Buzz\Client\FileGetContents;
 use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\ResponseFactoryInterface;
 use TMV\HTTPlugModule\ClientFactory\BuzzFactory;
 
 class BuzzFactoryTest extends TestCase
@@ -15,18 +15,18 @@ class BuzzFactoryTest extends TestCase
     {
         parent::setUp();
 
-        if (! \class_exists(Client::class)) {
-            $this->markTestSkipped(sprintf('Class %s does not exist', Client::class));
+        if (! \class_exists(FileGetContents::class)) {
+            $this->markTestSkipped(sprintf('Class %s does not exist', FileGetContents::class));
         }
     }
 
     public function testCreateClient(): void
     {
-        $messageFactory = $this->prophesize(MessageFactory::class);
+        $responseFactory = $this->prophesize(ResponseFactoryInterface::class);
 
-        $factory = new BuzzFactory($messageFactory->reveal());
+        $factory = new BuzzFactory($responseFactory->reveal());
         $client = $factory->createClient();
 
-        $this->assertInstanceOf(Client::class, $client);
+        $this->assertInstanceOf(FileGetContents::class, $client);
     }
 }

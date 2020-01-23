@@ -20,9 +20,14 @@ class SocketFactory implements ClientFactory
         $this->messageFactory = $messageFactory;
     }
 
+    /**
+     * @param array<string, mixed> $config
+     *
+     * @return HttpClient
+     */
     public function createClient(array $config = []): HttpClient
     {
-        if (! class_exists('Http\Client\Socket\Client')) {
+        if (! class_exists(Client::class)) {
             throw new LogicException('To use the Socket client you need to install the "php-http/socket-client" package.');
         }
 

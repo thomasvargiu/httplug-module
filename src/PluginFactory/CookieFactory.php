@@ -20,6 +20,11 @@ class CookieFactory implements PluginFactory
         $this->container = $container;
     }
 
+    /**
+     * @param array<string, mixed> $config
+     *
+     * @return Plugin
+     */
     public function createPlugin(array $config = []): Plugin
     {
         $cookieJarName = $config['cookie_jar'] ?? null;

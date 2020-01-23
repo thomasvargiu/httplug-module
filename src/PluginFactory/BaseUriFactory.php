@@ -23,6 +23,11 @@ class BaseUriFactory implements PluginFactory
         $this->uriFactory = $uriFactory;
     }
 
+    /**
+     * @param array<string, mixed> $config
+     *
+     * @return Plugin
+     */
     public function createPlugin(array $config = []): Plugin
     {
         return new BaseUriPlugin(
