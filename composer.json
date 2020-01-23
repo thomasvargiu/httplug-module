@@ -73,7 +73,7 @@
         "phpstan/extension-installer": "^1.0",
         "phpstan/phpstan": "^0.12",
         "phpstan/phpstan-deprecation-rules": "^0.12",
-        "phpunit/phpunit": "^7.5 || ^8.2"
+        "phpunit/phpunit": "^8.5.2"
     },
     "autoload": {
         "psr-4": {
