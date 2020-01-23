@@ -70,6 +70,7 @@
         "php-http/socket-client": "dev-master as 2.0.0",
         "php-http/stopwatch-plugin": "^1.2",
         "php-http/vcr-plugin": "dev-master",
+        "phpspec/prophecy": "^1.10",
         "phpstan/extension-installer": "^1.0",
         "phpstan/phpstan": "^0.12",
         "phpstan/phpstan-deprecation-rules": "^0.12",
