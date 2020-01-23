@@ -11,6 +11,11 @@ use LogicException;
 
 class Guzzle6Factory implements ClientFactory
 {
+    /**
+     * @param array<string, mixed> $config
+     *
+     * @return HttpClient
+     */
     public function createClient(array $config = []): HttpClient
     {
         if (! class_exists(Client::class)) {

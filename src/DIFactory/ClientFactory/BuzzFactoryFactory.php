@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace TMV\HTTPlugModule\DIFactory\ClientFactory;
 
-use Http\Message\MessageFactory;
 use Psr\Container\ContainerInterface;
+use Psr\Http\Message\ResponseFactoryInterface;
 use TMV\HTTPlugModule\ClientFactory\BuzzFactory;
 
 class BuzzFactoryFactory
 {
     public function __invoke(ContainerInterface $container): BuzzFactory
     {
-        /** @var MessageFactory $messageFactory */
-        $messageFactory = $container->get('httplug.message_factory');
+        /** @var ResponseFactoryInterface $responseFactory */
+        $responseFactory = $container->get('httplug.response_factory');
 
-        return new BuzzFactory($messageFactory);
+        return new BuzzFactory($responseFactory);
     }
 }

@@ -7,7 +7,7 @@
 [![Build Status](https://scrutinizer-ci.com/g/thomasvargiu/httplug-module/badges/build.png?b=master)](https://scrutinizer-ci.com/g/thomasvargiu/httplug-module/build-status/master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/thomasvargiu/httplug-module/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/thomasvargiu/httplug-module/?branch=master)
 
-HTTPlug Module for zend-framework and zend-expressive.
+HTTPlug Module for [laminas](https://getlaminas.org/) and mezzio.
 
 Visit [http://httplug.io/](http://httplug.io/) for more info.
 

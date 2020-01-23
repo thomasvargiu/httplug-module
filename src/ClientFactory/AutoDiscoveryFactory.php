@@ -9,6 +9,11 @@ use Http\Discovery\HttpClientDiscovery;
 
 class AutoDiscoveryFactory implements ClientFactory
 {
+    /**
+     * @param array<string, mixed> $config
+     *
+     * @return HttpClient
+     */
     public function createClient(array $config = []): HttpClient
     {
         return HttpClientDiscovery::find();

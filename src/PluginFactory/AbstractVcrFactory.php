@@ -22,36 +22,50 @@ abstract class AbstractVcrFactory implements PluginFactory
         $this->container = $container;
     }
 
+    /**
+     * @param string $recorder
+     * @param array<string, mixed> $config
+     *
+     * @return RecorderInterface
+     */
     protected function getRecorder(string $recorder, array $config = []): RecorderInterface
     {
         switch ($recorder) {
             case 'filesystem':
                 return  new FilesystemRecorder($config['fixtures_directory']);
-                break;
 
             case 'in_memory':
                 return new InMemoryRecorder();
-                break;
         }
 
         return $this->container->get($recorder);
     }
 
+    /**
+     * @param string $recorder
+     * @param array<string, mixed> $config
+     *
+     * @return PlayerInterface
+     */
     protected function getPlayer(string $recorder, array $config = []): PlayerInterface
     {
         switch ($recorder) {
             case 'filesystem':
                 return  new FilesystemRecorder($config['fixtures_directory']);
-                break;
 
             case 'in_memory':
                 return new InMemoryRecorder();
-                break;
         }
 
         return $this->container->get($recorder);
     }
 
+    /**
+     * @param string $namingStrategy
+     * @param array<string, mixed> $config
+     *
+     * @return NamingStrategyInterface
+     */
     protected function getNamingStrategy(string $namingStrategy, array $config = []): NamingStrategyInterface
     {
         if ($namingStrategy === 'default') {

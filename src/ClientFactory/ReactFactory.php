@@ -23,6 +23,11 @@ class ReactFactory implements ClientFactory
         $this->messageFactory = $messageFactory;
     }
 
+    /**
+     * @param array<string, mixed> $config
+     *
+     * @return HttpClient
+     */
     public function createClient(array $config = []): HttpClient
     {
         if (! class_exists('Http\Adapter\React\Client')) {

@@ -9,11 +9,11 @@ use function explode;
 use Http\Client\Common\Plugin;
 use Interop\Container\ContainerInterface;
 use function is_array;
+use Laminas\ServiceManager\Exception\ServiceNotCreatedException;
+use Laminas\ServiceManager\Exception\ServiceNotFoundException;
+use Laminas\ServiceManager\Factory\AbstractFactoryInterface;
 use function strpos;
 use TMV\HTTPlugModule\PluginFactoryManager;
-use Zend\ServiceManager\Exception\ServiceNotCreatedException;
-use Zend\ServiceManager\Exception\ServiceNotFoundException;
-use Zend\ServiceManager\Factory\AbstractFactoryInterface;
 
 class PluginAbstractFactory implements AbstractFactoryInterface
 {
@@ -22,6 +22,14 @@ class PluginAbstractFactory implements AbstractFactoryInterface
         return 'plugins';
     }
 
+    /**
+     * @param ContainerInterface $container
+     * @param string $requestedName
+     *
+     * @return array<string, string|array<string, mixed>>|null
+     * @phpstan-return null|array{0: string, 1: array<string, mixed>}
+     * @psalm-return null|array{0: string, 1: array<string, mixed>}
+     */
     private function getPluginConfig(ContainerInterface $container, $requestedName): ?array
     {
         if (0 !== strpos($requestedName, 'httplug.plugins.')) {
@@ -45,6 +53,12 @@ class PluginAbstractFactory implements AbstractFactoryInterface
         return [$pluginName, $config];
     }
 
+    /**
+     * @param ContainerInterface $container
+     * @param string $requestedName
+     *
+     * @return bool
+     */
     public function canCreate(ContainerInterface $container, $requestedName): bool
     {
         return is_array($this->getPluginConfig($container, $requestedName));
@@ -55,7 +69,7 @@ class PluginAbstractFactory implements AbstractFactoryInterface
      *
      * @param ContainerInterface $container
      * @param string $requestedName
-     * @param null|array $options
+     * @param null|array<string, mixed> $options
      *
      * @throws ServiceNotFoundException if unable to resolve the service
      * @throws ServiceNotCreatedException if an exception is raised when

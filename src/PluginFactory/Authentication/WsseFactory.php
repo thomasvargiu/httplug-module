@@ -8,6 +8,11 @@ use Http\Message\Authentication;
 
 class WsseFactory implements AuthenticationFactory
 {
+    /**
+     * @param array<string, mixed> $config
+     *
+     * @return Authentication
+     */
     public function createAuthentication(array $config = []): Authentication
     {
         return new Authentication\Wsse(

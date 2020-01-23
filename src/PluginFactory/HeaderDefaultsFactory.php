@@ -9,6 +9,11 @@ use Http\Client\Common\Plugin\HeaderDefaultsPlugin;
 
 class HeaderDefaultsFactory implements PluginFactory
 {
+    /**
+     * @param array<string, mixed> $config
+     *
+     * @return Plugin
+     */
     public function createPlugin(array $config = []): Plugin
     {
         return new HeaderDefaultsPlugin($config['headers'] ?? []);

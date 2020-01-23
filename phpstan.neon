@@ -2,20 +2,15 @@ parameters:
     level: max
     fileExtensions:
         - php
+    paths:
+        - %currentWorkingDirectory%/src/
+        - %currentWorkingDirectory%/tests/
     excludes_analyse:
         - %currentWorkingDirectory%/.phpstorm.meta.php
         - %currentWorkingDirectory%/vendor/*
-        - %currentWorkingDirectory%/src/ClientFactory\BuzzFactory.php
-        - %currentWorkingDirectory%/src/ClientFactory\Guzzle5Factory.php
-        - %currentWorkingDirectory%/src/ClientFactory\ReactFactory.php
-        - %currentWorkingDirectory%/src/ClientFactory\SocketFactory.php
-        - %currentWorkingDirectory%/tests/ClientFactory\BuzzFactoryTest.php
-        - %currentWorkingDirectory%/tests/ClientFactory\Guzzle5FactoryTest.php
-        - %currentWorkingDirectory%/tests/ClientFactory\ReactFactoryTest.php
-        - %currentWorkingDirectory%/tests/ClientFactory\SocketFactoryTest.php
 
     ignoreErrors:
         - '#Fetching class constant class of deprecated class Http\\Discovery\\MessageFactoryDiscovery.*#'
-
-includes:
-    - vendor/jangregor/phpstan-prophecy/src/extension.neon
+        - '#Http\\Adapter\\Guzzle5\\Client not found\.$#'
+        - '#^Method TMV\\HTTPlugModule\\ClientFactory\\Guzzle5Factory::createClient\(\) should return Http\\Client\\HttpClient but returns Http\\Adapter\\Guzzle5\\Client\.$#'
+        - '#^Parameter \#1 \$expected of method PHPUnit\\Framework\\Assert::assertInstanceOf\(\) expects class-string\<Http\\Adapter\\Guzzle5\\Client\>, string given\.$#'

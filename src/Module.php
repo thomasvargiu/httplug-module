@@ -6,6 +6,9 @@ namespace TMV\HTTPlugModule;
 
 class Module
 {
+    /**
+     * @return array<string, mixed>
+     */
     public function getConfig(): array
     {
         $config = (new ConfigProvider())();
