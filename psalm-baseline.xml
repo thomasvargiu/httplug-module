@@ -11,4 +11,29 @@
       <code><![CDATA[$config['parameters'] ?? '']]></code>
     </PossiblyInvalidArgument>
   </file>
+  <file src="src/PluginFactory/ContentTypeFactory.php">
+    <ArgumentTypeCoercion>
+      <code><![CDATA[$config]]></code>
+    </ArgumentTypeCoercion>
+  </file>
+  <file src="src/PluginFactory/DecoderFactory.php">
+    <ArgumentTypeCoercion>
+      <code><![CDATA[$config]]></code>
+    </ArgumentTypeCoercion>
+  </file>
+  <file src="src/PluginFactory/ErrorFactory.php">
+    <ArgumentTypeCoercion>
+      <code><![CDATA[$config]]></code>
+    </ArgumentTypeCoercion>
+  </file>
+  <file src="src/PluginFactory/RedirectFactory.php">
+    <ArgumentTypeCoercion>
+      <code><![CDATA[$config]]></code>
+    </ArgumentTypeCoercion>
+  </file>
+  <file src="src/PluginFactory/RetryFactory.php">
+    <ArgumentTypeCoercion>
+      <code><![CDATA[$config]]></code>
+    </ArgumentTypeCoercion>
+  </file>
 </files>
