@@ -12,6 +12,7 @@ use Prophecy\PhpUnit\ProphecyTrait;
 class WsseFactoryTest extends TestCase
 {
     use ProphecyTrait;
+
     public function testCreateAuthentication(): void
     {
         $config = [

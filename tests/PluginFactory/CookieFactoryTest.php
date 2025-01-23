@@ -14,6 +14,7 @@ use Prophecy\PhpUnit\ProphecyTrait;
 class CookieFactoryTest extends TestCase
 {
     use ProphecyTrait;
+
     public function testCreatePlugin(): void
     {
         $config = [

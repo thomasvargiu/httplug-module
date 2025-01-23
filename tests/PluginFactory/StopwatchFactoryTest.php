@@ -14,6 +14,7 @@ use Prophecy\PhpUnit\ProphecyTrait;
 class StopwatchFactoryTest extends TestCase
 {
     use ProphecyTrait;
+
     public function testCreatePlugin(): void
     {
         $config = [

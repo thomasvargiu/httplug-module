@@ -15,6 +15,7 @@ use Prophecy\PhpUnit\ProphecyTrait;
 class LoggerFactoryTest extends TestCase
 {
     use ProphecyTrait;
+
     public function testCreatePlugin(): void
     {
         $config = [

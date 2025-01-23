@@ -12,6 +12,7 @@ use Prophecy\PhpUnit\ProphecyTrait;
 class ReactFactoryTest extends TestCase
 {
     use ProphecyTrait;
+
     protected function setUp(): void
     {
         parent::setUp();

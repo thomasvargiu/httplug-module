@@ -5,15 +5,14 @@ declare(strict_types=1);
 namespace TMV\HTTPlugModule\ClientFactory;
 
 use Psr\Http\Client\ClientInterface;
-use function class_exists;
 use Http\Adapter\React\Client;
 use LogicException;
 
+use function class_exists;
+
 class ReactFactory implements ClientFactory
 {
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     /**
      * @param array<string, mixed> $config

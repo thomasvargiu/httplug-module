@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace TMV\HTTPlugModule\DIFactory;
 
-use function array_map;
 use Psr\Container\ContainerInterface;
 use TMV\HTTPlugModule\PluginFactoryManager;
+
+use function array_map;
 
 class PluginFactoryManagerFactory
 {

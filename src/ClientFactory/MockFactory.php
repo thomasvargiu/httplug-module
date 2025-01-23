@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace TMV\HTTPlugModule\ClientFactory;
 
 use Psr\Http\Client\ClientInterface;
-use function class_exists;
 use Http\Mock\Client;
 use LogicException;
+
+use function class_exists;
 
 class MockFactory implements ClientFactory
 {

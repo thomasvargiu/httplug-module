@@ -13,6 +13,7 @@ use Prophecy\PhpUnit\ProphecyTrait;
 class BuzzFactoryTest extends TestCase
 {
     use ProphecyTrait;
+
     protected function setUp(): void
     {
         parent::setUp();

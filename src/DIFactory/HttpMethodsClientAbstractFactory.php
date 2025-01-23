@@ -7,13 +7,14 @@ namespace TMV\HTTPlugModule\DIFactory;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
-use function explode;
 use Http\Client\Common\HttpMethodsClient;
 use Psr\Container\ContainerInterface;
 use InvalidArgumentException;
 use Laminas\ServiceManager\Exception\ServiceNotCreatedException;
 use Laminas\ServiceManager\Exception\ServiceNotFoundException;
 use Laminas\ServiceManager\Factory\AbstractFactoryInterface;
+
+use function explode;
 use function preg_match;
 
 class HttpMethodsClientAbstractFactory implements AbstractFactoryInterface
@@ -21,10 +22,7 @@ class HttpMethodsClientAbstractFactory implements AbstractFactoryInterface
     /**
      * Can the factory create an instance for the service?
      *
-     * @param ContainerInterface $container
      * @param string $requestedName
-     *
-     * @return bool
      */
     public function canCreate(ContainerInterface $container, $requestedName): bool
     {
@@ -38,17 +36,14 @@ class HttpMethodsClientAbstractFactory implements AbstractFactoryInterface
     }
 
     /**
-     * Create an object
+     * Create an object.
      *
-     * @param ContainerInterface $container
      * @param string $requestedName
      * @param null|array<string, mixed> $options
      *
      * @throws ServiceNotFoundException if unable to resolve the service
      * @throws ServiceNotCreatedException if an exception is raised when
-     *     creating a service
-     *
-     * @return HttpMethodsClient
+     *                                    creating a service
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null): HttpMethodsClient
     {

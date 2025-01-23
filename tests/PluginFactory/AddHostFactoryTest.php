@@ -14,6 +14,7 @@ use Prophecy\PhpUnit\ProphecyTrait;
 class AddHostFactoryTest extends TestCase
 {
     use ProphecyTrait;
+
     public function testCreatePlugin(): void
     {
         $uri = $this->prophesize(UriInterface::class);

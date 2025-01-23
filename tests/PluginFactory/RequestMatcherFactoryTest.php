@@ -17,6 +17,7 @@ use Prophecy\PhpUnit\ProphecyTrait;
 class RequestMatcherFactoryTest extends TestCase
 {
     use ProphecyTrait;
+
     public function testCreatePlugin(): void
     {
         $config = [

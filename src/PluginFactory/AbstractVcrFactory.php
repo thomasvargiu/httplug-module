@@ -22,16 +22,13 @@ abstract class AbstractVcrFactory implements PluginFactory
     }
 
     /**
-     * @param string $recorder
      * @param array<string, mixed> $config
-     *
-     * @return RecorderInterface
      */
     protected function getRecorder(string $recorder, array $config = []): RecorderInterface
     {
         switch ($recorder) {
             case 'filesystem':
-                return  new FilesystemRecorder($config['fixtures_directory']);
+                return new FilesystemRecorder($config['fixtures_directory']);
 
             case 'in_memory':
                 return new InMemoryRecorder();
@@ -41,16 +38,13 @@ abstract class AbstractVcrFactory implements PluginFactory
     }
 
     /**
-     * @param string $recorder
      * @param array<string, mixed> $config
-     *
-     * @return PlayerInterface
      */
     protected function getPlayer(string $recorder, array $config = []): PlayerInterface
     {
         switch ($recorder) {
             case 'filesystem':
-                return  new FilesystemRecorder($config['fixtures_directory']);
+                return new FilesystemRecorder($config['fixtures_directory']);
 
             case 'in_memory':
                 return new InMemoryRecorder();
@@ -60,10 +54,7 @@ abstract class AbstractVcrFactory implements PluginFactory
     }
 
     /**
-     * @param string $namingStrategy
      * @param array<string, mixed> $config
-     *
-     * @return NamingStrategyInterface
      */
     protected function getNamingStrategy(string $namingStrategy, array $config = []): NamingStrategyInterface
     {

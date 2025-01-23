@@ -4,16 +4,17 @@ declare(strict_types=1);
 
 namespace TMV\HTTPlugModule\DIFactory;
 
-use function count;
-use function explode;
 use Http\Client\Common\Plugin;
 use Psr\Container\ContainerInterface;
-use function is_array;
 use Laminas\ServiceManager\Exception\ServiceNotCreatedException;
 use Laminas\ServiceManager\Exception\ServiceNotFoundException;
 use Laminas\ServiceManager\Factory\AbstractFactoryInterface;
-use function strpos;
 use TMV\HTTPlugModule\PluginFactoryManager;
+
+use function count;
+use function explode;
+use function is_array;
+use function strpos;
 
 class PluginAbstractFactory implements AbstractFactoryInterface
 {
@@ -23,11 +24,12 @@ class PluginAbstractFactory implements AbstractFactoryInterface
     }
 
     /**
-     * @param ContainerInterface $container
      * @param string $requestedName
      *
      * @return array<string, string|array<string, mixed>>|null
+     *
      * @phpstan-return null|array{0: string, 1: array<string, mixed>}
+     *
      * @psalm-return null|array{0: string, 1: array<string, mixed>}
      */
     private function getPluginConfig(ContainerInterface $container, $requestedName): ?array
@@ -54,10 +56,7 @@ class PluginAbstractFactory implements AbstractFactoryInterface
     }
 
     /**
-     * @param ContainerInterface $container
      * @param string $requestedName
-     *
-     * @return bool
      */
     public function canCreate(ContainerInterface $container, $requestedName): bool
     {
@@ -65,17 +64,14 @@ class PluginAbstractFactory implements AbstractFactoryInterface
     }
 
     /**
-     * Create an object
+     * Create an object.
      *
-     * @param ContainerInterface $container
      * @param string $requestedName
      * @param null|array<string, mixed> $options
      *
      * @throws ServiceNotFoundException if unable to resolve the service
      * @throws ServiceNotCreatedException if an exception is raised when
-     *     creating a service
-     *
-     * @return Plugin
+     *                                    creating a service
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null): Plugin
     {

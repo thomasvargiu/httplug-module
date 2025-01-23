@@ -12,6 +12,7 @@ use Prophecy\PhpUnit\ProphecyTrait;
 class HeaderSetFactoryTest extends TestCase
 {
     use ProphecyTrait;
+
     public function testCreatePlugin(): void
     {
         $config = [

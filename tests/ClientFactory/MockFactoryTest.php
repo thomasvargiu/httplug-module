@@ -13,6 +13,7 @@ use Prophecy\PhpUnit\ProphecyTrait;
 class MockFactoryTest extends TestCase
 {
     use ProphecyTrait;
+
     public function testCreateClient(): void
     {
         $factory = new MockFactory();

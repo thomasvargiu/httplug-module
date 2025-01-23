@@ -15,6 +15,7 @@ use Prophecy\PhpUnit\ProphecyTrait;
 class CacheFactoryTest extends TestCase
 {
     use ProphecyTrait;
+
     public function testCreatePlugin(): void
     {
         $config = [

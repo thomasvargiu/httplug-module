@@ -12,6 +12,7 @@ use Prophecy\PhpUnit\ProphecyTrait;
 class AutoDiscoveryFactoryTest extends TestCase
 {
     use ProphecyTrait;
+
     public function testCreateClient(): void
     {
         $factory = new AutoDiscoveryFactory();

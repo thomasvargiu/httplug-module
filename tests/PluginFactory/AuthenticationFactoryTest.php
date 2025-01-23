@@ -14,6 +14,7 @@ use Prophecy\PhpUnit\ProphecyTrait;
 class AuthenticationFactoryTest extends TestCase
 {
     use ProphecyTrait;
+
     public function testCreatePlugin(): void
     {
         $config = [

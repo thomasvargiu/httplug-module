@@ -18,6 +18,7 @@ use Prophecy\PhpUnit\ProphecyTrait;
 class ClientAbstractFactoryTest extends TestCase
 {
     use ProphecyTrait;
+
     public function testHappyPath(): void
     {
         $requestedName = 'httplug.clients.foo';

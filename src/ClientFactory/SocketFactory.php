@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace TMV\HTTPlugModule\ClientFactory;
 
 use Psr\Http\Client\ClientInterface;
-use function class_exists;
 use Http\Client\Socket\Client;
 use LogicException;
+
+use function class_exists;
 
 class SocketFactory implements ClientFactory
 {

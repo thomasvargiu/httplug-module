@@ -9,14 +9,15 @@ use Http\Client\Common\PluginClient;
 use Psr\Container\ContainerInterface;
 use InvalidArgumentException;
 use Psr\Http\Client\ClientInterface;
-use function is_array;
-use function is_string;
 use Laminas\ServiceManager\Exception\ServiceNotCreatedException;
 use Laminas\ServiceManager\Exception\ServiceNotFoundException;
 use Laminas\ServiceManager\Factory\AbstractFactoryInterface;
 use TMV\HTTPlugModule\ClientFactory\AutoDiscoveryFactory;
 use TMV\HTTPlugModule\ClientFactory\ClientFactory;
 use TMV\HTTPlugModule\PluginFactoryManager;
+
+use function is_array;
+use function is_string;
 
 class ClientAbstractFactory implements AbstractFactoryInterface
 {
@@ -26,10 +27,7 @@ class ClientAbstractFactory implements AbstractFactoryInterface
     }
 
     /**
-     * @param ContainerInterface $container
      * @param string $requestedName
-     *
-     * @return bool
      */
     public function canCreate(ContainerInterface $container, $requestedName): bool
     {
@@ -45,17 +43,14 @@ class ClientAbstractFactory implements AbstractFactoryInterface
     }
 
     /**
-     * Create an object
+     * Create an object.
      *
-     * @param ContainerInterface $container
      * @param string $requestedName
      * @param null|array<string, mixed> $options
      *
      * @throws ServiceNotFoundException if unable to resolve the service
      * @throws ServiceNotCreatedException if an exception is raised when
-     *     creating a service
-     *
-     * @return ClientInterface
+     *                                    creating a service
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null): ClientInterface
     {
@@ -92,7 +87,6 @@ class ClientAbstractFactory implements AbstractFactoryInterface
     }
 
     /**
-     * @param ContainerInterface $container
      * @param array<string, mixed> $config
      *
      * @return Plugin[]

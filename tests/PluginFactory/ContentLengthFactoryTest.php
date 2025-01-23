@@ -12,6 +12,7 @@ use Prophecy\PhpUnit\ProphecyTrait;
 class ContentLengthFactoryTest extends TestCase
 {
     use ProphecyTrait;
+
     public function testCreatePlugin(): void
     {
         $factory = new ContentLengthFactory();

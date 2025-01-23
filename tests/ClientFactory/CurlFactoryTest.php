@@ -14,6 +14,7 @@ use Prophecy\PhpUnit\ProphecyTrait;
 class CurlFactoryTest extends TestCase
 {
     use ProphecyTrait;
+
     public function testCreateClient(): void
     {
         $responseFactory = $this->prophesize(ResponseFactoryInterface::class);

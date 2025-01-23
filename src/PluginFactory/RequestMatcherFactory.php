@@ -8,9 +8,10 @@ use Http\Client\Common\Plugin;
 use Http\Client\Common\Plugin\RequestMatcherPlugin;
 use Http\Message\RequestMatcher;
 use InvalidArgumentException;
-use function is_string;
 use Psr\Container\ContainerInterface;
 use TMV\HTTPlugModule\PluginFactoryManager;
+
+use function is_string;
 
 class RequestMatcherFactory implements PluginFactory
 {
@@ -23,8 +24,6 @@ class RequestMatcherFactory implements PluginFactory
 
     /**
      * @param array<string, mixed> $config
-     *
-     * @return Plugin
      */
     public function createPlugin(array $config = []): Plugin
     {
@@ -52,8 +51,6 @@ class RequestMatcherFactory implements PluginFactory
 
     /**
      * @param string|array<string, mixed> $plugin
-     *
-     * @return Plugin
      */
     private function getPlugin($plugin): Plugin
     {

@@ -11,8 +11,6 @@ class QueryDefaultsFactory implements PluginFactory
 {
     /**
      * @param array<string, mixed> $config
-     *
-     * @return Plugin
      */
     public function createPlugin(array $config = []): Plugin
     {

@@ -12,6 +12,7 @@ use Prophecy\PhpUnit\ProphecyTrait;
 class PluginFactoryManagerTest extends TestCase
 {
     use ProphecyTrait;
+
     public function testGetFactory(): void
     {
         $factory = $this->prophesize(PluginFactory::class);

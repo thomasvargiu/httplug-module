@@ -12,6 +12,7 @@ use Prophecy\PhpUnit\ProphecyTrait;
 class Guzzle6FactoryTest extends TestCase
 {
     use ProphecyTrait;
+
     public function testCreateClient(): void
     {
         $factory = new Guzzle6Factory();

@@ -12,6 +12,7 @@ use Prophecy\PhpUnit\ProphecyTrait;
 class DecoderFactoryTest extends TestCase
 {
     use ProphecyTrait;
+
     public function testCreatePlugin(): void
     {
         $factory = new DecoderFactory();

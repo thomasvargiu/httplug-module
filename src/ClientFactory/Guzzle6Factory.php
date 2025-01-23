@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace TMV\HTTPlugModule\ClientFactory;
 
 use Psr\Http\Client\ClientInterface;
-use function class_exists;
 use Http\Adapter\Guzzle6\Client;
 use LogicException;
+
+use function class_exists;
 
 class Guzzle6Factory implements ClientFactory
 {

@@ -6,8 +6,9 @@ namespace TMV\HTTPlugModule\ClientFactory;
 
 use Buzz\Client\FileGetContents;
 use Psr\Http\Client\ClientInterface;
-use function class_exists;
 use Psr\Http\Message\ResponseFactoryInterface;
+
+use function class_exists;
 
 class BuzzFactory implements ClientFactory
 {

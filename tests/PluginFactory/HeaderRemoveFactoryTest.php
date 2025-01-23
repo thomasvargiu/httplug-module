@@ -12,6 +12,7 @@ use Prophecy\PhpUnit\ProphecyTrait;
 class HeaderRemoveFactoryTest extends TestCase
 {
     use ProphecyTrait;
+
     public function testCreatePlugin(): void
     {
         $config = [

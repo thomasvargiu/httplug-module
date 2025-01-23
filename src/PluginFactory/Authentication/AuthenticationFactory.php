@@ -10,8 +10,6 @@ interface AuthenticationFactory
 {
     /**
      * @param array<string, mixed> $config
-     *
-     * @return Authentication
      */
     public function createAuthentication(array $config = []): Authentication;
 }

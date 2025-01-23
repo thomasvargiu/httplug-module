@@ -12,6 +12,7 @@ use Prophecy\PhpUnit\ProphecyTrait;
 class BearerFactoryTest extends TestCase
 {
     use ProphecyTrait;
+
     public function testCreateAuthentication(): void
     {
         $config = [

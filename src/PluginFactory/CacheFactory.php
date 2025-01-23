@@ -9,7 +9,6 @@ use Http\Client\Common\Plugin\CachePlugin;
 use Psr\Cache\CacheItemPoolInterface;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Message\StreamFactoryInterface;
-use TMV\HTTPlugModule\Adapter\StreamFactory;
 
 class CacheFactory implements PluginFactory
 {
@@ -22,8 +21,6 @@ class CacheFactory implements PluginFactory
 
     /**
      * @param array<string, mixed> $config
-     *
-     * @return Plugin
      */
     public function createPlugin(array $config = []): Plugin
     {

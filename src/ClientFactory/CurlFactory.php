@@ -5,13 +5,14 @@ declare(strict_types=1);
 namespace TMV\HTTPlugModule\ClientFactory;
 
 use Psr\Http\Client\ClientInterface;
-use function class_exists;
-use function constant;
 use Http\Client\Curl\Client;
-use function is_string;
 use LogicException;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
+
+use function class_exists;
+use function constant;
+use function is_string;
 use function sprintf;
 
 class CurlFactory implements ClientFactory
@@ -20,10 +21,6 @@ class CurlFactory implements ClientFactory
 
     private StreamFactoryInterface $streamFactory;
 
-    /**
-     * @param ResponseFactoryInterface $responseFactory
-     * @param StreamFactoryInterface   $streamFactory
-     */
     public function __construct(ResponseFactoryInterface $responseFactory, StreamFactoryInterface $streamFactory)
     {
         $this->responseFactory = $responseFactory;
@@ -32,8 +29,6 @@ class CurlFactory implements ClientFactory
 
     /**
      * @param array<int|string, mixed> $config
-     *
-     * @return ClientInterface
      */
     public function createClient(array $config = []): ClientInterface
     {

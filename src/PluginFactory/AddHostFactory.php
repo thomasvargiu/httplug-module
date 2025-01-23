@@ -14,8 +14,6 @@ class AddHostFactory implements PluginFactory
 
     /**
      * AddHostFactory constructor.
-     *
-     * @param UriFactoryInterface $uriFactory
      */
     public function __construct(UriFactoryInterface $uriFactory)
     {
@@ -24,8 +22,6 @@ class AddHostFactory implements PluginFactory
 
     /**
      * @param array<string, mixed> $config
-     *
-     * @return Plugin
      */
     public function createPlugin(array $config = []): Plugin
     {
