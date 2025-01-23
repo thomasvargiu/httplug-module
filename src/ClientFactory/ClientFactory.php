@@ -9,7 +9,7 @@ use Psr\Http\Client\ClientInterface;
 interface ClientFactory
 {
     /**
-     * @param array<string, mixed> $config
+     * @param array<mixed> $config
      */
     public function createClient(array $config = []): ClientInterface;
 }

@@ -12,9 +12,6 @@ use function class_exists;
 
 class SocketFactory implements ClientFactory
 {
-    /**
-     * @param array<string, mixed> $config
-     */
     public function createClient(array $config = []): ClientInterface
     {
         if (! class_exists(Client::class)) {

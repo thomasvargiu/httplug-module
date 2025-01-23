@@ -27,9 +27,6 @@ class CurlFactory implements ClientFactory
         $this->streamFactory = $streamFactory;
     }
 
-    /**
-     * @param array<int|string, mixed> $config
-     */
     public function createClient(array $config = []): ClientInterface
     {
         if (! class_exists(Client::class)) {

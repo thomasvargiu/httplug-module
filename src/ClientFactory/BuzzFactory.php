@@ -19,9 +19,6 @@ class BuzzFactory implements ClientFactory
         $this->responseFactory = $responseFactory;
     }
 
-    /**
-     * @param array<string, mixed> $config
-     */
     public function createClient(array $config = []): ClientInterface
     {
         if (! class_exists(FileGetContents::class)) {

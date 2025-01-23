@@ -31,7 +31,6 @@ class AuthenticationFactory implements PluginFactory
         $options = $config['options'] ?? [];
         $type = $config['type'] ?? null;
 
-        /** @var null|Authentication\AuthenticationFactory $authFactory */
         $authFactory = $this->factories[$type] ?? null;
 
         if (! $authFactory instanceof Authentication\AuthenticationFactory) {

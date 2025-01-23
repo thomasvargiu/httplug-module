@@ -14,8 +14,10 @@ use TMV\HTTPlugModule\PluginFactoryManager;
 use function count;
 use function explode;
 use function is_array;
-use function strpos;
 
+/**
+ * @psalm-api
+ */
 class PluginAbstractFactory implements AbstractFactoryInterface
 {
     protected function getServiceTypeName(): string
@@ -24,17 +26,13 @@ class PluginAbstractFactory implements AbstractFactoryInterface
     }
 
     /**
-     * @param string $requestedName
-     *
      * @return array<string, string|array<string, mixed>>|null
-     *
-     * @phpstan-return null|array{0: string, 1: array<string, mixed>}
      *
      * @psalm-return null|array{0: string, 1: array<string, mixed>}
      */
-    private function getPluginConfig(ContainerInterface $container, $requestedName): ?array
+    private function getPluginConfig(ContainerInterface $container, string $requestedName): ?array
     {
-        if (0 !== strpos($requestedName, 'httplug.plugins.')) {
+        if (! str_starts_with($requestedName, 'httplug.plugins.')) {
             return null;
         }
 
@@ -67,7 +65,7 @@ class PluginAbstractFactory implements AbstractFactoryInterface
      * Create an object.
      *
      * @param string $requestedName
-     * @param null|array<string, mixed> $options
+     * @param null|array<mixed> $options
      *
      * @throws ServiceNotFoundException if unable to resolve the service
      * @throws ServiceNotCreatedException if an exception is raised when

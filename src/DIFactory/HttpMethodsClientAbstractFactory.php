@@ -39,7 +39,7 @@ class HttpMethodsClientAbstractFactory implements AbstractFactoryInterface
      * Create an object.
      *
      * @param string $requestedName
-     * @param null|array<string, mixed> $options
+     * @param null|array<mixed> $options
      *
      * @throws ServiceNotFoundException if unable to resolve the service
      * @throws ServiceNotCreatedException if an exception is raised when
@@ -56,15 +56,15 @@ class HttpMethodsClientAbstractFactory implements AbstractFactoryInterface
         /** @var ClientInterface $httpClient */
         $httpClient = $container->get('httplug.clients.' . $clientName);
 
-        /** @var RequestFactoryInterface $messageFactory */
-        $messageFactory = $container->get('httplug.request_factory');
+        /** @var RequestFactoryInterface $requestFactory */
+        $requestFactory = $container->get('httplug.request_factory');
 
-        /** @var StreamFactoryInterface $messageFactory */
+        /** @var StreamFactoryInterface $streamFactory */
         $streamFactory = $container->get('httplug.stream_factory');
 
         return new HttpMethodsClient(
             $httpClient,
-            $messageFactory,
+            $requestFactory,
             $streamFactory
         );
     }

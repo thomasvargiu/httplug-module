@@ -21,11 +21,6 @@ use function is_string;
 
 class ClientAbstractFactory implements AbstractFactoryInterface
 {
-    protected function getServiceTypeName(): string
-    {
-        return 'clients';
-    }
-
     /**
      * @param string $requestedName
      */
@@ -46,7 +41,7 @@ class ClientAbstractFactory implements AbstractFactoryInterface
      * Create an object.
      *
      * @param string $requestedName
-     * @param null|array<string, mixed> $options
+     * @param null|array<mixed> $options
      *
      * @throws ServiceNotFoundException if unable to resolve the service
      * @throws ServiceNotCreatedException if an exception is raised when

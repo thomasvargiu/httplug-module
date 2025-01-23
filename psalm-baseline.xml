@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="5.26.1@d747f6500b38ac4f7dfc5edbcae6e4b637d7add0">
+  <file src="src/DIFactory/PluginAbstractFactory.php">
+    <PossiblyNullArgument>
+      <code><![CDATA[$config]]></code>
+      <code><![CDATA[$pluginName]]></code>
+    </PossiblyNullArgument>
+  </file>
+  <file src="src/PluginFactory/Authentication/QueryParamFactory.php">
+    <PossiblyInvalidArgument>
+      <code><![CDATA[$config['parameters'] ?? '']]></code>
+    </PossiblyInvalidArgument>
+  </file>
+</files>

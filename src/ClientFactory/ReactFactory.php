@@ -14,9 +14,6 @@ class ReactFactory implements ClientFactory
 {
     public function __construct() {}
 
-    /**
-     * @param array<string, mixed> $config
-     */
     public function createClient(array $config = []): ClientInterface
     {
         if (! class_exists(Client::class)) {
