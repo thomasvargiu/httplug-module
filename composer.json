@@ -79,7 +79,7 @@
         "php-http/stopwatch-plugin": "^1.4.2",
         "php-http/vcr-plugin": "^1.2.3",
         "phpspec/prophecy-phpunit": "^v2.3.0",
-        "phpunit/phpunit": "^9.6.22 || ^10.5.41",
+        "phpunit/phpunit": "^10.5.41",
         "react/event-loop": "^1.5",
         "psalm/plugin-phpunit": "^0.19.0",
         "vimeo/psalm": "^5.26.1"
