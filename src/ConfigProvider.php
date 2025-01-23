@@ -4,22 +4,17 @@ declare(strict_types=1);
 
 namespace TMV\HTTPlugModule;
 
-use Http\Discovery\MessageFactoryDiscovery;
 use Http\Discovery\Psr17FactoryDiscovery;
 use Laminas\ServiceManager\Factory\InvokableFactory;
 use TMV\HTTPlugModule\ClientFactory\AutoDiscoveryFactory;
 use TMV\HTTPlugModule\ClientFactory\BuzzFactory;
 use TMV\HTTPlugModule\ClientFactory\CurlFactory;
-use TMV\HTTPlugModule\ClientFactory\Guzzle5Factory;
 use TMV\HTTPlugModule\ClientFactory\Guzzle6Factory;
 use TMV\HTTPlugModule\ClientFactory\MockFactory;
 use TMV\HTTPlugModule\ClientFactory\ReactFactory;
 use TMV\HTTPlugModule\ClientFactory\SocketFactory;
 use TMV\HTTPlugModule\DIFactory\ClientFactory\BuzzFactoryFactory;
 use TMV\HTTPlugModule\DIFactory\ClientFactory\CurlFactoryFactory;
-use TMV\HTTPlugModule\DIFactory\ClientFactory\Guzzle5FactoryFactory;
-use TMV\HTTPlugModule\DIFactory\ClientFactory\ReactFactoryFactory;
-use TMV\HTTPlugModule\DIFactory\ClientFactory\SocketFactoryFactory;
 use TMV\HTTPlugModule\DIFactory\PluginFactoryManagerFactory;
 
 class ConfigProvider
@@ -89,14 +84,12 @@ class ConfigProvider
                 'httplug.client' => 'httplug.client.default',
                 'httplug.client_factory.buz' => BuzzFactory::class,
                 'httplug.client_factory.curl' => CurlFactory::class,
-                'httplug.client_factory.guzzle5' => Guzzle5Factory::class,
                 'httplug.client_factory.guzzle6' => Guzzle6Factory::class,
                 'httplug.client_factory.mock' => MockFactory::class,
                 'httplug.client_factory.react' => ReactFactory::class,
                 'httplug.client_factory.socket' => SocketFactory::class,
             ],
             'factories' => [
-                'httplug.message_factory' => [MessageFactoryDiscovery::class, 'find'],
                 'httplug.response_factory' => [Psr17FactoryDiscovery::class, 'findResponseFactory'],
                 'httplug.request_factory' => [Psr17FactoryDiscovery::class, 'findRequestFactory'],
                 'httplug.uri_factory' => [Psr17FactoryDiscovery::class, 'findUrlFactory'],
@@ -105,11 +98,10 @@ class ConfigProvider
                 AutoDiscoveryFactory::class => InvokableFactory::class,
                 BuzzFactory::class => BuzzFactoryFactory::class,
                 CurlFactory::class => CurlFactoryFactory::class,
-                Guzzle5Factory::class => Guzzle5FactoryFactory::class,
                 Guzzle6Factory::class => InvokableFactory::class,
                 MockFactory::class => InvokableFactory::class,
-                ReactFactory::class => ReactFactoryFactory::class,
-                SocketFactory::class => SocketFactoryFactory::class,
+                ReactFactory::class => InvokableFactory::class,
+                SocketFactory::class => InvokableFactory::class,
                 // Authentication factories
                 PluginFactory\Authentication\BasicFactory::class => InvokableFactory::class,
                 PluginFactory\Authentication\BearerFactory::class => InvokableFactory::class,

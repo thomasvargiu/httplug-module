@@ -5,12 +5,13 @@ declare(strict_types=1);
 namespace TMV\HTTPlugModuleTest\ClientFactory;
 
 use Http\Client\Socket\Client;
-use Http\Message\MessageFactory;
 use PHPUnit\Framework\TestCase;
 use TMV\HTTPlugModule\ClientFactory\SocketFactory;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 class SocketFactoryTest extends TestCase
 {
+    use ProphecyTrait;
     protected function setUp(): void
     {
         parent::setUp();
@@ -22,9 +23,7 @@ class SocketFactoryTest extends TestCase
 
     public function testCreateClient(): void
     {
-        $messageFactory = $this->prophesize(MessageFactory::class);
-
-        $factory = new SocketFactory($messageFactory->reveal());
+        $factory = new SocketFactory();
         $client = $factory->createClient();
 
         $this->assertInstanceOf(Client::class, $client);

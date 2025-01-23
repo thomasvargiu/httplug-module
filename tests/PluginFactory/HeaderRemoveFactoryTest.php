@@ -7,9 +7,11 @@ namespace TMV\HTTPlugModuleTest\PluginFactory;
 use Http\Client\Common\Plugin\HeaderRemovePlugin;
 use PHPUnit\Framework\TestCase;
 use TMV\HTTPlugModule\PluginFactory\HeaderRemoveFactory;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 class HeaderRemoveFactoryTest extends TestCase
 {
+    use ProphecyTrait;
     public function testCreatePlugin(): void
     {
         $config = [

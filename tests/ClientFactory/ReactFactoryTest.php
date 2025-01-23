@@ -5,12 +5,13 @@ declare(strict_types=1);
 namespace TMV\HTTPlugModuleTest\ClientFactory;
 
 use Http\Adapter\React\Client;
-use Http\Message\MessageFactory;
 use PHPUnit\Framework\TestCase;
 use TMV\HTTPlugModule\ClientFactory\ReactFactory;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 class ReactFactoryTest extends TestCase
 {
+    use ProphecyTrait;
     protected function setUp(): void
     {
         parent::setUp();
@@ -22,9 +23,7 @@ class ReactFactoryTest extends TestCase
 
     public function testCreateClient(): void
     {
-        $messageFactory = $this->prophesize(MessageFactory::class);
-
-        $factory = new ReactFactory($messageFactory->reveal());
+        $factory = new ReactFactory();
         $client = $factory->createClient();
 
         $this->assertInstanceOf(Client::class, $client);

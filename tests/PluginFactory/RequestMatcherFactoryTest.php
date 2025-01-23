@@ -12,9 +12,11 @@ use Psr\Container\ContainerInterface;
 use TMV\HTTPlugModule\PluginFactory\PluginFactory;
 use TMV\HTTPlugModule\PluginFactory\RequestMatcherFactory;
 use TMV\HTTPlugModule\PluginFactoryManager;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 class RequestMatcherFactoryTest extends TestCase
 {
+    use ProphecyTrait;
     public function testCreatePlugin(): void
     {
         $config = [

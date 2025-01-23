@@ -10,9 +10,11 @@ use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 use TMV\HTTPlugModule\PluginFactory\LoggerFactory;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 class LoggerFactoryTest extends TestCase
 {
+    use ProphecyTrait;
     public function testCreatePlugin(): void
     {
         $config = [

@@ -4,14 +4,12 @@ declare(strict_types=1);
 
 namespace TMV\HTTPlugModule\ClientFactory;
 
-use Http\Client\HttpClient;
+use Psr\Http\Client\ClientInterface;
 
 interface ClientFactory
 {
     /**
      * @param array<string, mixed> $config
-     *
-     * @return HttpClient
      */
-    public function createClient(array $config = []): HttpClient;
+    public function createClient(array $config = []): ClientInterface;
 }

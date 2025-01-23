@@ -7,9 +7,11 @@ namespace TMV\HTTPlugModuleTest\PluginFactory;
 use Http\Client\Common\Plugin\ContentTypePlugin;
 use PHPUnit\Framework\TestCase;
 use TMV\HTTPlugModule\PluginFactory\ContentTypeFactory;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 class ContentTypeFactoryTest extends TestCase
 {
+    use ProphecyTrait;
     public function testCreatePlugin(): void
     {
         $factory = new ContentTypeFactory();

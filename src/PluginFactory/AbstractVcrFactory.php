@@ -14,8 +14,7 @@ use Psr\Container\ContainerInterface;
 
 abstract class AbstractVcrFactory implements PluginFactory
 {
-    /** @var ContainerInterface */
-    protected $container;
+    protected ContainerInterface $container;
 
     public function __construct(ContainerInterface $container)
     {

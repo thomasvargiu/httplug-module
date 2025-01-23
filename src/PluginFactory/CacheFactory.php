@@ -13,8 +13,7 @@ use TMV\HTTPlugModule\Adapter\StreamFactory;
 
 class CacheFactory implements PluginFactory
 {
-    /** @var ContainerInterface */
-    private $container;
+    private ContainerInterface $container;
 
     public function __construct(ContainerInterface $container)
     {
@@ -46,7 +45,7 @@ class CacheFactory implements PluginFactory
 
         return new CachePlugin(
             $cachePool,
-            new StreamFactory($streamFactory),
+            $streamFactory,
             $options
         );
     }

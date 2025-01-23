@@ -7,7 +7,7 @@ namespace TMV\HTTPlugModule\DIFactory;
 use function count;
 use function explode;
 use Http\Client\Common\Plugin;
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 use function is_array;
 use Laminas\ServiceManager\Exception\ServiceNotCreatedException;
 use Laminas\ServiceManager\Exception\ServiceNotFoundException;

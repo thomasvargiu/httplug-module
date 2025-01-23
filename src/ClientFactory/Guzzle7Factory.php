@@ -9,7 +9,7 @@ use function class_exists;
 use Http\Adapter\Guzzle6\Client;
 use LogicException;
 
-class Guzzle6Factory implements ClientFactory
+class Guzzle7Factory implements ClientFactory
 {
     /**
      * @param array<string, mixed> $config

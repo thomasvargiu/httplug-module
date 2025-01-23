@@ -9,9 +9,11 @@ use Http\Message\CookieJar;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 use TMV\HTTPlugModule\PluginFactory\CookieFactory;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 class CookieFactoryTest extends TestCase
 {
+    use ProphecyTrait;
     public function testCreatePlugin(): void
     {
         $config = [

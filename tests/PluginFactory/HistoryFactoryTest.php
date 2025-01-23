@@ -9,9 +9,11 @@ use Http\Client\Common\Plugin\Journal;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 use TMV\HTTPlugModule\PluginFactory\HistoryFactory;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 class HistoryFactoryTest extends TestCase
 {
+    use ProphecyTrait;
     public function testCreatePlugin(): void
     {
         $config = [

@@ -9,9 +9,11 @@ use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 use TMV\HTTPlugModule\ClientFactory\CurlFactory;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 class CurlFactoryTest extends TestCase
 {
+    use ProphecyTrait;
     public function testCreateClient(): void
     {
         $responseFactory = $this->prophesize(ResponseFactoryInterface::class);

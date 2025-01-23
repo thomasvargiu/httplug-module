@@ -10,8 +10,7 @@ use Psr\Http\Message\UriFactoryInterface;
 
 class AddPathFactory implements PluginFactory
 {
-    /** @var UriFactoryInterface */
-    private $uriFactory;
+    private UriFactoryInterface $uriFactory;
 
     /**
      * AddHostFactory constructor.

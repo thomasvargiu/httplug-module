@@ -8,9 +8,11 @@ use Buzz\Client\FileGetContents;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseFactoryInterface;
 use TMV\HTTPlugModule\ClientFactory\BuzzFactory;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 class BuzzFactoryTest extends TestCase
 {
+    use ProphecyTrait;
     protected function setUp(): void
     {
         parent::setUp();

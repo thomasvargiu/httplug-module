@@ -11,7 +11,7 @@ use TMV\HTTPlugModule\PluginFactory\PluginFactory;
 class PluginFactoryManager
 {
     /** @var array<string, PluginFactory> */
-    private $factories;
+    private array $factories;
 
     /**
      * @param array<string, PluginFactory> $factories

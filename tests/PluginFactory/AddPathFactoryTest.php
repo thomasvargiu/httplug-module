@@ -9,9 +9,11 @@ use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\UriFactoryInterface;
 use Psr\Http\Message\UriInterface;
 use TMV\HTTPlugModule\PluginFactory\AddPathFactory;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 class AddPathFactoryTest extends TestCase
 {
+    use ProphecyTrait;
     public function testCreatePlugin(): void
     {
         $uri = $this->prophesize(UriInterface::class);

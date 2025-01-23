@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace TMV\HTTPlugModule\DIFactory;
 
+use Psr\Http\Client\ClientInterface;
+use Psr\Http\Message\RequestFactoryInterface;
+use Psr\Http\Message\StreamFactoryInterface;
 use function explode;
 use Http\Client\Common\HttpMethodsClient;
-use Http\Client\HttpClient;
-use Http\Message\MessageFactory;
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 use InvalidArgumentException;
 use Laminas\ServiceManager\Exception\ServiceNotCreatedException;
 use Laminas\ServiceManager\Exception\ServiceNotFoundException;
@@ -57,15 +58,19 @@ class HttpMethodsClientAbstractFactory implements AbstractFactoryInterface
 
         [,, $clientName] = explode('.', $requestedName);
 
-        /** @var HttpClient $httpClient */
+        /** @var ClientInterface $httpClient */
         $httpClient = $container->get('httplug.clients.' . $clientName);
 
-        /** @var MessageFactory $messageFactory */
-        $messageFactory = $container->get('httplug.message_factory');
+        /** @var RequestFactoryInterface $messageFactory */
+        $messageFactory = $container->get('httplug.request_factory');
+
+        /** @var StreamFactoryInterface $messageFactory */
+        $streamFactory = $container->get('httplug.stream_factory');
 
         return new HttpMethodsClient(
             $httpClient,
-            $messageFactory
+            $messageFactory,
+            $streamFactory
         );
     }
 }

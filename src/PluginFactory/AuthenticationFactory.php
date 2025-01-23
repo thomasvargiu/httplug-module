@@ -11,7 +11,7 @@ use InvalidArgumentException;
 class AuthenticationFactory implements PluginFactory
 {
     /** @var array<string, Authentication\AuthenticationFactory> */
-    private $factories;
+    private array $factories;
 
     /**
      * AuthenticationFactory constructor.

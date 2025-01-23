@@ -7,9 +7,11 @@ namespace TMV\HTTPlugModuleTest;
 use PHPUnit\Framework\TestCase;
 use TMV\HTTPlugModule\PluginFactory\PluginFactory;
 use TMV\HTTPlugModule\PluginFactoryManager;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 class PluginFactoryManagerTest extends TestCase
 {
+    use ProphecyTrait;
     public function testGetFactory(): void
     {
         $factory = $this->prophesize(PluginFactory::class);

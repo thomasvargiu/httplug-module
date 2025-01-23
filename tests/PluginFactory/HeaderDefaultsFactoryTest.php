@@ -7,9 +7,11 @@ namespace TMV\HTTPlugModuleTest\PluginFactory;
 use Http\Client\Common\Plugin\HeaderDefaultsPlugin;
 use PHPUnit\Framework\TestCase;
 use TMV\HTTPlugModule\PluginFactory\HeaderDefaultsFactory;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 class HeaderDefaultsFactoryTest extends TestCase
 {
+    use ProphecyTrait;
     public function testCreatePlugin(): void
     {
         $config = [

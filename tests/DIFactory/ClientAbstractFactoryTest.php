@@ -7,15 +7,17 @@ namespace TMV\HTTPlugModuleTest\DIFactory;
 use Http\Client\Common\Plugin;
 use Http\Client\Common\PluginClient;
 use Http\Client\HttpClient;
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 use PHPUnit\Framework\TestCase;
 use TMV\HTTPlugModule\ClientFactory\ClientFactory;
 use TMV\HTTPlugModule\DIFactory\ClientAbstractFactory;
 use TMV\HTTPlugModule\PluginFactory\PluginFactory;
 use TMV\HTTPlugModule\PluginFactoryManager;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 class ClientAbstractFactoryTest extends TestCase
 {
+    use ProphecyTrait;
     public function testHappyPath(): void
     {
         $requestedName = 'httplug.clients.foo';

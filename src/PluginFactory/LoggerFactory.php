@@ -12,8 +12,7 @@ use Psr\Log\LoggerInterface;
 
 class LoggerFactory implements PluginFactory
 {
-    /** @var ContainerInterface */
-    private $container;
+    private ContainerInterface $container;
 
     public function __construct(ContainerInterface $container)
     {

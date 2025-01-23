@@ -7,9 +7,11 @@ namespace TMV\HTTPlugModuleTest\PluginFactory\Authentication;
 use Http\Message\Authentication;
 use PHPUnit\Framework\TestCase;
 use TMV\HTTPlugModule\PluginFactory\Authentication\BearerFactory;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 class BearerFactoryTest extends TestCase
 {
+    use ProphecyTrait;
     public function testCreateAuthentication(): void
     {
         $config = [

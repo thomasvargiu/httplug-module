@@ -6,9 +6,9 @@ namespace TMV\HTTPlugModule\DIFactory;
 
 use Http\Client\Common\Plugin;
 use Http\Client\Common\PluginClient;
-use Http\Client\HttpClient;
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 use InvalidArgumentException;
+use Psr\Http\Client\ClientInterface;
 use function is_array;
 use function is_string;
 use Laminas\ServiceManager\Exception\ServiceNotCreatedException;
@@ -55,9 +55,9 @@ class ClientAbstractFactory implements AbstractFactoryInterface
      * @throws ServiceNotCreatedException if an exception is raised when
      *     creating a service
      *
-     * @return HttpClient
+     * @return ClientInterface
      */
-    public function __invoke(ContainerInterface $container, $requestedName, array $options = null): HttpClient
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = null): ClientInterface
     {
         if (! preg_match('/^httplug\.clients\.[^.]+$/', $requestedName)) {
             throw new InvalidArgumentException('Invalid service name');

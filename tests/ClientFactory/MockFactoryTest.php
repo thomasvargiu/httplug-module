@@ -8,9 +8,11 @@ use Http\Client\HttpClient;
 use Http\Mock\Client;
 use PHPUnit\Framework\TestCase;
 use TMV\HTTPlugModule\ClientFactory\MockFactory;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 class MockFactoryTest extends TestCase
 {
+    use ProphecyTrait;
     public function testCreateClient(): void
     {
         $factory = new MockFactory();

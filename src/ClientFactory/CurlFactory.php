@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace TMV\HTTPlugModule\ClientFactory;
 
+use Psr\Http\Client\ClientInterface;
 use function class_exists;
 use function constant;
 use Http\Client\Curl\Client;
-use Http\Client\HttpClient;
 use function is_string;
 use LogicException;
 use Psr\Http\Message\ResponseFactoryInterface;
@@ -16,11 +16,9 @@ use function sprintf;
 
 class CurlFactory implements ClientFactory
 {
-    /** @var ResponseFactoryInterface */
-    private $responseFactory;
+    private ResponseFactoryInterface $responseFactory;
 
-    /** @var StreamFactoryInterface */
-    private $streamFactory;
+    private StreamFactoryInterface $streamFactory;
 
     /**
      * @param ResponseFactoryInterface $responseFactory
@@ -35,9 +33,9 @@ class CurlFactory implements ClientFactory
     /**
      * @param array<int|string, mixed> $config
      *
-     * @return HttpClient
+     * @return ClientInterface
      */
-    public function createClient(array $config = []): HttpClient
+    public function createClient(array $config = []): ClientInterface
     {
         if (! class_exists(Client::class)) {
             throw new LogicException('To use the Curl client you need to install the "php-http/curl-client" package.');

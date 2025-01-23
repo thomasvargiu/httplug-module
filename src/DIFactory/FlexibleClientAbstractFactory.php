@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace TMV\HTTPlugModule\DIFactory;
 
+use Psr\Http\Client\ClientInterface;
 use function explode;
 use Http\Client\Common\FlexibleHttpClient;
-use Http\Client\HttpClient;
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 use InvalidArgumentException;
 use Laminas\ServiceManager\Exception\ServiceNotCreatedException;
 use Laminas\ServiceManager\Exception\ServiceNotFoundException;
@@ -56,7 +56,7 @@ class FlexibleClientAbstractFactory implements AbstractFactoryInterface
 
         [,, $clientName] = explode('.', $requestedName);
 
-        /** @var HttpClient $httpClient */
+        /** @var ClientInterface $httpClient */
         $httpClient = $container->get('httplug.clients.' . $clientName);
 
         return new FlexibleHttpClient($httpClient);

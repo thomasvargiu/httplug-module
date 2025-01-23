@@ -10,9 +10,11 @@ use Psr\Cache\CacheItemPoolInterface;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 use TMV\HTTPlugModule\PluginFactory\CacheFactory;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 class CacheFactoryTest extends TestCase
 {
+    use ProphecyTrait;
     public function testCreatePlugin(): void
     {
         $config = [

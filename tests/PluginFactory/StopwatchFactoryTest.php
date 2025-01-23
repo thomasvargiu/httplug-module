@@ -9,9 +9,11 @@ use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 use Symfony\Component\Stopwatch\Stopwatch;
 use TMV\HTTPlugModule\PluginFactory\StopwatchFactory;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 class StopwatchFactoryTest extends TestCase
 {
+    use ProphecyTrait;
     public function testCreatePlugin(): void
     {
         $config = [

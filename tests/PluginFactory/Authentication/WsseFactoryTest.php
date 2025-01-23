@@ -7,9 +7,11 @@ namespace TMV\HTTPlugModuleTest\PluginFactory\Authentication;
 use Http\Message\Authentication;
 use PHPUnit\Framework\TestCase;
 use TMV\HTTPlugModule\PluginFactory\Authentication\WsseFactory;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 class WsseFactoryTest extends TestCase
 {
+    use ProphecyTrait;
     public function testCreateAuthentication(): void
     {
         $config = [

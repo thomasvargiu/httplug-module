@@ -12,8 +12,7 @@ use Psr\Container\ContainerInterface;
 
 class CookieFactory implements PluginFactory
 {
-    /** @var ContainerInterface */
-    private $container;
+    private ContainerInterface $container;
 
     public function __construct(ContainerInterface $container)
     {

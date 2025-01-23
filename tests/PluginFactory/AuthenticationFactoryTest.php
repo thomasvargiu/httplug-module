@@ -9,9 +9,11 @@ use Http\Message\Authentication;
 use PHPUnit\Framework\TestCase;
 use TMV\HTTPlugModule\PluginFactory\Authentication\AuthenticationFactory as AuthFactory;
 use TMV\HTTPlugModule\PluginFactory\AuthenticationFactory;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 class AuthenticationFactoryTest extends TestCase
 {
+    use ProphecyTrait;
     public function testCreatePlugin(): void
     {
         $config = [

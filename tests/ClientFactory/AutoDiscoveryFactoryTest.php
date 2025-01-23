@@ -7,9 +7,11 @@ namespace TMV\HTTPlugModuleTest\ClientFactory;
 use Http\Client\HttpClient;
 use PHPUnit\Framework\TestCase;
 use TMV\HTTPlugModule\ClientFactory\AutoDiscoveryFactory;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 class AutoDiscoveryFactoryTest extends TestCase
 {
+    use ProphecyTrait;
     public function testCreateClient(): void
     {
         $factory = new AutoDiscoveryFactory();
